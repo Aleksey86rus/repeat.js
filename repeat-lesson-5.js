@@ -385,12 +385,12 @@
 // Не выполняя код, дать ответ:
 // Что выведется в консоль ? Ответ записать в комментарий.
 
-// console.log(5 > 3 && 7 < 10 && 5 == "5" || false && "1");
-// console.log(5 > 3 && 7 < 10 && 5 == "5" && false || "1");
-// console.log(3 && 5 && null && 4);
-// console.log(1 && 0 && 10 && 3);
-// console.log(1 && 100 && 2 && 0);
-// console.log(1 && 100 && 2 && 50);
+console.log(5 > 3 && 7 < 10 && 5 == "5" || false && "1");
+console.log(5 > 3 && 7 < 10 && 5 == "5" && false || "1");
+console.log(3 && 5 && null && 4);
+console.log(1 && 0 && 10 && 3);
+console.log(1 && 100 && 2 && 0);
+console.log(1 && 100 && 2 && 50);
 
 // console.log(null || 0 || undefined);
 // console.log(1 || 0 || true || false);
