@@ -166,9 +166,20 @@
 // console.log(0 == ""); // true
 // console.log('Я' > 'Ю'); // true
 
-// //         object   boolean
-// console.log(null == false); //  Два разных типа данных при нестрогом равенстве = false
-// console.log(null === false); //  Два разных типа данных при строгом равенстве = false
+
+
+
+// * Операторы сранвения
+// Если типы данных разные, то значения неявно преобразуются к типу number
+// ИСКЛ: null и undefined не приводятся к типу number 
+// Но при этом null == undefined -> true
+
+
+
+//         null   boolean
+// null === 0
+console.log(null == false); // 
+// console.log(null === false); //  = false
 // console.log('  ' == 0); //  false
 
 // console.log(typeof false); // boolean
@@ -365,7 +376,14 @@
 // console.log(String('t').charCodeAt('0')); // Number 116
 // console.log(String('').charCodeAt('')); // NaN
 
-// console.log('t' && 'a' || '' && NaN); // a
+console.log('t' && 'a' || '' && NaN); // a
+
+// 'a' || '' -> 'a'
+
+
+
+
+
 // console.log(Number('t')); // NaN
 // console.log(isNaN(Number('t'))); // True
 
@@ -385,12 +403,12 @@
 // Не выполняя код, дать ответ:
 // Что выведется в консоль ? Ответ записать в комментарий.
 
-console.log(5 > 3 && 7 < 10 && 5 == "5" || false && "1");
-console.log(5 > 3 && 7 < 10 && 5 == "5" && false || "1");
-console.log(3 && 5 && null && 4);
-console.log(1 && 0 && 10 && 3);
-console.log(1 && 100 && 2 && 0);
-console.log(1 && 100 && 2 && 50);
+// console.log(5 > 3 && 7 < 10 && 5 == "5" || false && "1");
+// console.log(5 > 3 && 7 < 10 && 5 == "5" && false || "1");
+// console.log(3 && 5 && null && 4);
+// console.log(1 && 0 && 10 && 3);
+// console.log(1 && 100 && 2 && 0);
+// console.log(1 && 100 && 2 && 50);
 
 // console.log(null || 0 || undefined);
 // console.log(1 || 0 || true || false);
