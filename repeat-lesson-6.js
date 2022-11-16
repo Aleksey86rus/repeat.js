@@ -305,6 +305,27 @@
 // ★ Задачи повышенной сложности ★
 // ★ 18. Задача ★
 // Запросить у пользователя 3 числа. Найти наибольшее число. Если числа одинаковые, то вывести любое число.
+
+// let userNum1 = Number(prompt('Write your number 1'));
+// let userNum2 = Number(prompt('Write your number 2'));
+// let userNum3 = Number(prompt('Write your number 3'));
+
+
+// if (userNum1 >= userNum2) {
+//   if (userNum1 >= userNum3) {
+//     console.log(userNum1);
+//   } else {
+//     console.log(userNum3);
+//   }
+// } else {
+//   if (userNum2 > userNum3) {
+//     console.log(userNum2);
+//   } else {
+//     console.log(userNum3);
+//   }
+// }
+
+
 // ================================================================================ //
 
 // ★ 19. Задача ★
@@ -314,6 +335,57 @@
 // Если пользователь нажал ок и это было число, то вывести его;
 // Если пользователь нажал ок и это было не число, то вывести в консоль: Это не число;
 // Если пользователь нажал ок с пустым текстом, то вывести в консоль: Пользователь ничего не ввёл;
+
+// let userNum = prompt('Write your number');
+
+// if (userNum === '') {
+//   console.log('Пользовватель ничего не ввел');
+// } else if (userNum === null) {
+//   console.log('Нажата отмена');
+// } else if (isNaN(userNum)) {
+//   console.log('Это не число');
+// } else {
+//   console.log(Number(userNum));
+// }
+
+
+// let userNum = Number(prompt('Write your number'));
+
+// console.log(userNum); // ничего => Ok and cancel => number 0
+// console.log(typeof userNum); //  ok and cancel => 'number'
+// console.log(typeof !userNum); // 'abs' => ok => 'boolean' / 'abs' => cancel => 'boolean'
+// console.log(typeof userNum); // 'abs' => ok => 'number' / 'abs' => cancel => 'number'
+// console.log(userNum); // 'abs' => ok => NaN / 'abs' => cancel => number 0
+// console.log(!userNum); // 'abs' => ok => true / 'abs' => cancel => true
+// console.log(userNum); // number 10 => ok => number 10 / number 10 => cancel => nummer 0
+// console.log(!userNum); // number 10 => ok => false / number 10 => cancel => true
+// console.log(isNaN(userNum)); // number 10 => ok => false / number 10 => cancel => false
+// console.log(isNaN(userNum)); // 'abc' => ok => true / 'abc' => cancel => false
+
+
+
+// let userNum = prompt('Write your number');
+
+// console.log(typeof userNum); // Ok => 'string' / cancel => 'object'
+// console.log(typeof userNum); // 'abs' => ok => 'string' / 'abs' => cancel => 'object'
+// console.log(typeof userNum); // number 10 => ok => 'string' / number 10 => cancel => 'object'
+// console.log(userNum); // number 10 => ok => '10' / number 10 => cancel => null
+// console.log(userNum); // ok => пустая строка / cancel => null
+// console.log(Number(userNum)); // number 10 => ok => number 10 / number 10 => cancel => number 0
+// console.log(isNaN(userNum)); // 'abc' ok => true / 'abc' => cancel => false
+// console.log(isNaN(userNum)); // number 500 ok => false / number 500 => cancel => false
+// console.log(Number(isNaN(userNum))); // 'abc' ok => number 1 / 'abc' => cancel => number 0
+// console.log(Number(isNaN(userNum))); // number 500 ok => number 0 / number 500 => cancel => number 0
+
+
+// let a = 10;
+// let b = '10';
+// let c = '10px';
+// console.log(isNaN(a)); // false
+// console.log(isNaN(b)); // false
+// console.log(isNaN(c)); // true
+
+
 // ================================================================================ //
 
 // ★ 20. Задача ★
@@ -321,13 +393,30 @@
 
 // let isAccess = true;
 // if (isAccess) {
-// 	var test = "mp4";
+//   var test = "mp4";
 // }
 // if (isAccess) {
-// 	let anotherTest = "mkv";
+//   let anotherTest = "mkv";
 // }
 // console.log(test);
 // console.log(anotherTest);
+
+
+// let isAccess = true;
+// let anotherTest; // let область видимость от 406 строки и до конца файла. Здесь мы ее объявили.
+
+// if (isAccess) {
+//   var test = "mp4"; // var область видимости от 409 и выше будет (undefined) от 409 и ниже будет 'mp4'
+// }
+// if (isAccess) {
+//   anotherTest = "mkv"; // а здесь присвоили ей значение.
+// }
+
+// console.log(test);
+// console.log(anotherTest);
+
+//let / const = имеют блочую видимость, другими словами от скобки до скобки.
+
 // ================================================================================ //
 
 // ★ 21. Задача ★
@@ -340,7 +429,83 @@
 // Если это "1", то вывести в консоль "4";
 // Если это "2", то вывести в консоль "8";
 // Если это "3", то вывести в консоль "15"; Во всех остальных случаях выводим: "error";
+
+
+// let userNum = prompt('Write your symbol');
+
+// switch (userNum) {
+//   case 'a':
+//     console.log('alpha');
+//     break;
+//   case 'b':
+//     console.log('beta');
+//     break;
+//   case 'c':
+//     console.log('gamma');
+//     break;
+//   case '1':
+//     console.log(Number(4));
+//     break;
+//   case '2':
+//     console.log(Number(8));
+//     break;
+//   case '3':
+//     console.log(Number(15));
+//     break;
+//   default:
+//     console.error('error');
+// }
+
 // ================================================================================ //
 
 // ★ 22. Задача ★
 // Решить задачи: 1, 3, 5, 9, пользуясь тернарным оператором.
+
+
+// 1. Задача
+// Запросить у пользователя число. Если оно равно 108, то вывести в консоль: Ом.
+
+
+// let userNum = Number(prompt('Write your number'));
+
+// userNum === 108 ? console.log('Oм') : null;
+// userNum === 108 && console.log('Ом')
+
+
+// ================================================================================ //
+
+
+// 3. Задача
+// Запросить одно число, проверить на чётность. Если число чётное, то вывести true, иначе false.
+
+// let userNum = Number(prompt('Write your number'));
+
+// userNum % 2 === 0 ? console.log(true) : console.log(false);
+
+// ================================================================================ //
+
+// 5. Задача
+// Запросить 1 число и 1 строку. Если число чётное, то к строке добавить =even=. Иначе добавить к строке =odd=.
+
+// let userNum = Number(prompt('Write your number'));
+// let userStr = prompt('Write your text');
+
+// userNum % 2 === 0 ? console.log(userStr + ' =even=') : console.log(userStr + ' =odd=');;
+
+// ================================================================================ //
+
+// 9. Задача
+// Пользователя просят ввести число.
+
+// Если это число от 0 до 10, то выводим: thin;
+// Если же это число от 10 до 20 вкл, то выводим: medium;
+// Если же это число от 21 до 50 не вкл, то выводим: extra; В противном случае ничего не делаем.
+
+// let userNum = Number(prompt('Write your number'));
+
+// userNum >= 0 && userNum <= 10 ? console.log('thin') : userNum >= 10 && userNum <= 20 ? console.log('medium') : userNum >= 21 && userNum < 50 ? console.log('extra') : null;
+
+// let message = (userNum >= 0 && userNum < 10) ? 'thin' : (userNum >= 10 && userNum <= 20) ? 'medium' : (userNum >= 21 && userNum < 50) ? 'extra' : null;
+
+// console.log(message);
+
