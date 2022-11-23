@@ -348,6 +348,28 @@
 //   console.log(Number(userNum));
 // }
 
+// if (userNum === null) {
+//   console.log('Нажата отмена');
+// } else if (!isNaN(userNum)) { // !isNaN(Number(''))
+//   console.log(Number(userNum));
+// } else if (isNaN(userNum)) {
+//   console.log('Это не число');
+// } else {
+//   console.log('Пользовватель ничего не ввел');
+// }
+
+
+// ! -> Логическое НЕ неявно приводит к типу Boolean 
+// 
+console.log(+'10'); // 10
+console.log(-'10'); // -10
+
+
+
+
+
+
+
 
 // let userNum = Number(prompt('Write your number'));
 
