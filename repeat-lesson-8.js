@@ -556,15 +556,15 @@
 
 // =========================================================================== //
 
-// 37. Задача
+// TODO 37. Задача
 // Не выполняя код, дать ответ:
 // Что выведется в консоль? Ответ записать в комментарий.
 
 // console.log(String([])); // ''
 // console.log(String([1])); // '1'
 // console.log(String([0])); // '0'
-// console.log(String([1, 1])); // '1,1' 
-// console.log(String([[1, 2]])); // '1,2' 
+// console.log(String([1, 1])); // '1,1'
+// console.log(String([[1, 2]])); // '1,2'
 // console.log(String([[1]])); // '1'
 
 // console.log(Number([])); // 0
@@ -628,27 +628,49 @@
 // console.log(bigNumbInArray(userArray, '+'));
 
 
-const userArray = [1, 2, 3, 4, 5];
-let maxNumb = userArray[0];
-let minNumb = userArray[0];
+// TODO const userArray = [1, 2, 3, 4, 5];
+// let maxNumb = userArray[0];
+// let minNumb = userArray[0];
 
-function bigNumbInArray(array, symb) {
-  for (const el of array) {
-    if (el > maxNumb) {
-      maxNumb = el
-    } else if (el < maxNumb) {
-      minNumb = el
-    }
-  }
-  return (symb === '+') ? maxNumb : minNumb
-}
+// function bigNumbInArray(array, symb) {
+//   for (const el of array) {
+//     if (el > maxNumb) {
+//       maxNumb = el
+//     } else if (el < maxNumb) {
+//       minNumb = el
+//     }
+//   }
+//   return (symb === '+') ? maxNumb : minNumb
+// }
 
-console.log(bigNumbInArray(userArray, '+'));
+// console.log(bigNumbInArray(userArray, '+'));
 
 // =========================================================================== //
 
 // 39. Задача
 // Написать функцию, на вход которой подаётся массив с любыми типами данных. Функция возвращает объект, в котором сумма всех чисел и выполнена конкатенация строк. Остальные типы данных проигнорировать.
+
+// const myArray = [10, 20, 'ten', 'twenty', null, [1, 2], 15, 'mouse']
+// let sumOllNumbers = 0;
+// let ollString = '';
+
+// function getObject(arr) {
+//   for (const el of arr) {
+//     if (typeof el === 'number') {
+//       sumOllNumbers += el;
+//     } if (typeof el === 'string') {
+//       ollString += el
+//     }
+//   }
+//   return {
+//     'Сумма всех чисел в массиве': sumOllNumbers,
+//     'Все строки в массиве': ollString
+//   }
+// }
+
+// console.log(getObject(myArray));
+
+
 // =========================================================================== //
 
 // ★ Задачи повышенной сложности ★
@@ -663,13 +685,82 @@ console.log(bigNumbInArray(userArray, '+'));
 //     ['beet', 200],
 //     ['сabbage', 300]
 // ];
+
+
 // =========================================================================== //
 
-// ★ 41. Задача ★
+// TODO ★ 41. Задача ★
 // Создать пустой массив. Пользователя запрашивают вводить числа до тех пор, пока он не введёт слово Хватит. Как только пользователь ввёл слово, вывести массив чисел.
 
 // Массив должен состоять из типа number, не string;
-// Слово Хватит не зависит от регистра, можно написать, как с маленькой, так и сбольшой буквы;
+// Слово Хватит не зависит от регистра, можно написать, как с маленькой, так и с большой буквы;
+
+
+// const newArray = [];
+// let userWorld = 'хватит';
+
+// while (true) {
+//   let userNumb = prompt('Write your numbers');
+// let userWorld = 'Хватит';
+// хватит === Хватит // хватит === хватит
+// Хватит === Хватит // Хватит === хватит
+// хВАТИТ === Хватит // хВАТИТ === хватит
+// хВатит === Хватит // хВатит === хватит
+// ...
+//userNumb === userWorld || userNumb === userWorld.toLowerCase()
+
+// хватит === хВаТиТ
+// хватит === Хватит
+// хватит === Хватит
+// хватит === хватит
+// хватит === хватиТ
+//   if (userWorld !== userNumb.toLowerCase()) {
+//     newArray.push(Number(userNumb));
+//   } else {
+//     break;
+//   }
+// }
+
+// console.log(newArray);
+
+
+
+// const USER_WORLD = 'хватит';
+// const PROMPT_MESSAGE = 'Write your numbers';
+
+// const numList = [];
+// let isRun = true;
+
+// while (isRun) {
+//   const userMessage = prompt(PROMPT_MESSAGE);
+//   if (userMessage.toLowerCase() !== USER_WORLD) {
+//     numList.push(+userMessage);
+//   } else {
+//     break;
+//   }
+// }
+
+
+// Number() <-> +
+
+// for (let i = 0; i <= 10; i++) {
+//   console.log(i);
+// }
+
+
+// let i = 0;
+// while (i <= 10) {
+//   console.log(i);
+//   i++;
+// }
+
+
+// let i = 1;
+// do {
+//   console.log(i);
+//   i++;
+// } while (i <= 10);
+
 // =========================================================================== //
 
 // ★ 42. Задача ★
@@ -678,15 +769,70 @@ console.log(bigNumbInArray(userArray, '+'));
 // array = [0, 9, 2, 7, -2, 4, 34, -7, 0, -12, 28, 14, 0, 0, 15, 22, 0];
 // arrayEven = [];
 // arrayOdd = [];
+
+
+// for (const el of array) {
+//   if (el % 2 === 0 && el > 0) {
+//     arrayEven.push(el);
+//   } else if (el % 2 !== 0) {
+//     arrayOdd.push(el);
+//   }
+// }
+
+// console.log(arrayEven);
+// console.log(arrayOdd);
+
 // =========================================================================== //
 
-// ★ 43. Задача ★
+// TODO ★ 43. Задача ★
 // Дан массив чисел, написать программу, которая отсортирует исходный массив в порядке возрастания. Без использования метода sort();
 
-// array = [25, 32, 17, 99, 15];
+const array = [15, 32, 17, 77, 25, 0];
+
+
+// 15 17 32 25 0 77 (1 большая итерация)
+// 15 17 25 0 32 77
+// 15 17 0 25 32 77
+// 15 0 17 25 32 77
+// 0 15 17 25 32 77
+
+// (1 большая итерация)
+// for (let i = 0; i < array.length; i++) {
+//   if (array[i] > array[i + 1]) {
+//     const temp = array[i]
+//     array[i] = array[i + 1]
+//     array[i + 1] = temp
+//   }
+// }
+
+
+// for (let k = 0; k < array.length - 1; k++) {
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] > array[i + 1]) {
+//       const temp = array[i]
+//       array[i] = array[i + 1]
+//       array[i + 1] = temp
+//       // newArray.push(array[i + 1], array[i])
+//     }
+//   }
+// }
+
+
+
+console.log(array);
+
+
+// console.log(newArray);
+
+// console.log(minElementInArray);
+// console.log(maxElementInArray);
+
+
+
+
 // =========================================================================== //
 
-// ★ 44. Задача ★
+// TODO ★ 44. Задача ★
 // Дан массив. Вывести в консоль все элементы массива в матричном виде:
 
 // const array = [
@@ -701,9 +847,14 @@ console.log(bigNumbInArray(userArray, '+'));
 // 21 22 23 24 25
 // 31 32 33 34 35
 // 41 42 43 44 45
+
+
+
+
+
 // =========================================================================== //
 
-// ★ 45. Задача ★
+// TODO ★ 45. Задача ★
 // Дан массив. Заменить в массиве значения: 11, 22, 33, 44, 55 на строку 00.
 
 // const array = [
@@ -713,3 +864,26 @@ console.log(bigNumbInArray(userArray, '+'));
 //     [41, 42, 43, 44, 45],
 //     [51, 52, 53, 54, 55]
 // ];    
+
+
+// ==================================================================================== //
+// Неглубокое копирование (поверхностное копирование shallow copy)
+// const newArr = [];
+// for (let i = 0; i < test.length; i++) {
+//   newArr.push(test[i])
+// }
+
+// const newArr = [];
+// for (const el of test) {
+//   newArr.push(el)
+// }
+
+// const newArr = test.concat()
+
+const newArr = [...test]
+
+console.log(newArr === test);
+console.log(newArr);
+console.log(test);
+
+// ================================================================================== //
