@@ -426,22 +426,92 @@
 
 // 29. Задача
 // Написать функцию, на вход которой подаётся массив из строк, функция возвращает новый массив из строк, чья длина больше 3 символов.
+
+
+// const array = ['one', 'two', 'three', 'four', 'five'];
+
+// console.log(array);
+// const newarray = [];
+
+// function getLengthStrMoreThree(arr) {
+//   for (const el of array) {
+//     if (el.length > 3) {
+//       newarray.push(el)
+//     }
+//   }
+//   return newarray
+// }
+
+// console.log(getLengthStrMoreThree(array));
+
 // ========================================================================= //
 
 // 30. Задача
 // Написать функцию, на вход которой подаётся массив из чисел, функция изменяет текущий массив, заменяя каждый второй элемент массива на строку =x2=.
+
+// const array = [10, 21, 3, 47, 55, 16, 37, 81, 95, 104];
+
+// function changeSecondElOnString(arr) {
+//   for (let i = 0; i <= arr.length; i++) {
+//     if ((i + 1) % 2 === 0) {
+//       arr[i] = '=x2='
+//     }
+//   }
+//   return arr
+// }
+
+// console.log(changeSecondElOnString(array));
+
 // ========================================================================= //
 
 // 31. Задача
 // Написать функцию, на вход которой подаётся массив из строк, функция изменяет текущий массив, заменяя каждый третий элемент массива на строку число - количество символов в элементе.
+
+// const array = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eigth', 'nine'];
+
+// function changeEveryThirdElOnString(arr) {
+//   for (let i = 0; i <= arr.length; i++) {
+//     if ((i + 1) % 3 === 0) {
+//       arr[i] = String(arr[i].length)
+//     }
+//   }
+//   return arr
+// }
+
+// console.log(changeEveryThirdElOnString(array));
+
 // ========================================================================= //
 
 // 32. Задача
 // Написать функцию, на вход которой подаётся массив, функция удаляет первый и последний элементы из массива.
+
+// const array = [10, 21, 3, 47, 55, 16, 37, 81, 95, 104];
+
+// function deleteFirstAndLastElInArray(arr) {
+//   arr.shift();
+//   arr.pop()
+//   return arr
+// }
+
+// console.log(deleteFirstAndLastElInArray(array));
+
 // ========================================================================= //
 
 // 33. Задача
 // Написать функцию, на вход которой подаётся 2 массива, функция добавляет к первому массиву все значения из второго.
+
+// const array = [10, 21, 3, 47, 55, 16, 37, 81, 95, 104];
+// const array2 = [55, 155, 255, 355, 455, 555];
+
+// function addsToTheFirstAllElementsOfTheSecond(arr, arr2) {
+//   for (const el of arr2) {
+//     arr.push(el)
+//   }
+//   return arr
+// }
+
+// console.log(addsToTheFirstAllElementsOfTheSecond(array, array2));
+
 // ========================================================================= //
 
 // 34. Задача
@@ -449,18 +519,19 @@
 // Что выведется в консоль? Ответ записать в комментарий.
 
 // function test(x, y) {
-//     return x + y;
+//     return x + y; // 7
 // }
 
 // console.log(test(3, 4, 5, 7));
+
 // ========================================================================= //
 
-// 35. Задача
+//TODO 35. Задача
 // Не выполняя код, дать ответ:
 // Что выведется в консоль? Ответ записать в комментарий.
 
 // function test(x, y) {
-//     return x + y;
+//   return x + y; // NaN
 // }
 
 // console.log(test(3));
@@ -471,7 +542,7 @@
 // Что выведется в консоль? Ответ записать в комментарий.
 
 // function test(x, y) {
-//     console.log(x + y);
+//   console.log(x + y); // 10
 // }
 
 // console.log(test(3, 7));
@@ -486,7 +557,7 @@
 // console.log(test('1', 0));
 
 // function test(x, y) {
-//     return x + y;
+//   return x + y;
 // }
 // ========================================================================= //
 
@@ -495,13 +566,13 @@
 // Что выведется в консоль? Ответ записать в комментарий.
 
 // function test(x, y) {
-//     return x * y;
+//   return x * y;
 // }
 
-// console.log(test('3', '7'));
-// console.log(test(false, 1));
-// console.log(test('1', 0));
-// console.log(test('1', 'true'));
+// console.log(test('3', '7')); // 21
+// console.log(test(false, 1)); // 0
+// console.log(test('1', 0)); // 0
+// console.log(test('1', 'true')); // NaN
 // ========================================================================= //
 
 // 39. Задача
@@ -509,29 +580,31 @@
 // Что выведется в консоль? Ответ записать в комментарий.
 
 // function test(x = 1, y = 1) {
-//     return x * y;
+//   return x * y;
 // }
+// console.log(test(null));
+// console.log(test(undefined));
 
-// console.log(test(4));
-// console.log(test(null, 5));
-// console.log(test(undefined, 5));
-// console.log(test(undefined, undefined));
+// console.log(test(4)); // 4
+// console.log(test(null, 5)); // 0
+// console.log(test(undefined, 5)); // 5
+// console.log(test(undefined, undefined)); // 1
 // ========================================================================= //
 
 // 40. Задача
 // Не выполняя код, дать ответ:
 // Что выведется в консоль? Ответ записать в комментарий.
 
-// console.log(test(3, 2, 1));
-// console.log(test(null, null, 2));
-// console.log(test(undefined, undefined, 5));
-// console.log(test(undefined, undefined, undefined));
-// console.log(test(3, 2, undefined));
-// console.log(test(3, 2, null));
-// console.log(test(3, 2));
+// console.log(test(3, 2, 1)); // 6
+// console.log(test(null, null, 2)); // 0
+// console.log(test(undefined, undefined, 5)); // 5
+// console.log(test(undefined, undefined, undefined)); // 1
+// console.log(test(3, 2, undefined)); // 6
+// console.log(test(3, 2, null)); // 0
+// console.log(test(3, 2)); // 6
 
 // function test(x, y, z = 1) {
-//     return x * y * z;
+//   return x * y * z;
 // }
 // ========================================================================= //
 
@@ -539,19 +612,33 @@
 // Не выполняя код, дать ответ:
 // Что выведется в консоль? Ответ записать в комментарий.
 
-// console.log(sum(3, sum(4, 5)));
-// console.log(sum(sum(3, -1), 7));
-// console.log(sum(sum(0, -5), sum(3, 7)));
-// console.log(sum(sum(3, sum(12, 5)), sum(sum(4, 8), 13)));
-// console.log(sum(sum(sum(5, 3), sum(7, -15)), sum(sum(10, 10), sum(-15, -5))));
+// console.log(sum(3, sum(4, 5))); // 12
+// console.log(sum(sum(3, -1), 7)); // 9
+// console.log(sum(sum(0, -5), sum(3, 7))); // 5
+// console.log(sum(sum(3, sum(12, 5)), sum(sum(4, 8), 13))); // 45
+// console.log(sum(sum(sum(5, 3), sum(7, -15)), sum(sum(10, 10), sum(-15, -5)))); // 0
 
 // function sum(x, y) {
-//     return x + y;
+//   return x + y;
 // }
 // ========================================================================= //
 
 // 42. Задача
 // Написать функцию, на вход которой подаётся массив чисел. Функция возвращает одно число - наибольшее из них.
+
+// const array = [10, 21, 3, 47, 55, 16, 37, 81, 95, 104];
+// let minNumber = array[0];
+// function getTheLargestNumber(arr) {
+//   for (const el of arr) {
+//     if (el > minNumber) {
+//       minNumber = el
+//     }
+//   }
+//   return minNumber
+// }
+
+// console.log(getTheLargestNumber(array));
+
 // ========================================================================= //
 
 // ★ Задачи повышенной сложности ★

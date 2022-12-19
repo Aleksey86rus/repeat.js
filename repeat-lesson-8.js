@@ -787,7 +787,7 @@
 // TODO ★ 43. Задача ★
 // Дан массив чисел, написать программу, которая отсортирует исходный массив в порядке возрастания. Без использования метода sort();
 
-const array = [15, 32, 17, 77, 25, 0];
+// const array = [15, 32, 17, 77, 25, 0];
 
 
 // 15 17 32 25 0 77 (1 большая итерация)
@@ -807,6 +807,7 @@ const array = [15, 32, 17, 77, 25, 0];
 
 
 // for (let k = 0; k < array.length - 1; k++) {
+//   // debugger
 //   for (let i = 0; i < array.length; i++) {
 //     if (array[i] > array[i + 1]) {
 //       const temp = array[i]
@@ -819,7 +820,7 @@ const array = [15, 32, 17, 77, 25, 0];
 
 
 
-console.log(array);
+// console.log(array);
 
 
 // console.log(newArray);
@@ -828,6 +829,14 @@ console.log(array);
 // console.log(maxElementInArray);
 
 
+const array = [15, 32, 17];
+
+for (let i = 0; i <= array.length; i++) {
+  for (let k = array.length; k <= 5; k++) {
+    console.log(array[i]);
+  }
+
+}
 
 
 // =========================================================================== //
@@ -863,7 +872,7 @@ console.log(array);
 //     [31, 32, 33, 34, 35],
 //     [41, 42, 43, 44, 45],
 //     [51, 52, 53, 54, 55]
-// ];    
+// ];
 
 
 // ==================================================================================== //
@@ -880,10 +889,10 @@ console.log(array);
 
 // const newArr = test.concat()
 
-const newArr = [...test]
+// const newArr = [...test]
 
-console.log(newArr === test);
-console.log(newArr);
-console.log(test);
+// console.log(newArr === test);
+// console.log(newArr);
+// console.log(test);
 
 // ================================================================================== //
