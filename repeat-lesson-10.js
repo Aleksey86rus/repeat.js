@@ -268,32 +268,189 @@
 // =================================================================================== //
 
 // 17. Задача
-// Написать функцию, на вход которой подаётся объект.Функция возвращает число - количество свйоств в объекте.
+// Написать функцию, на вход которой подаётся объект. Функция возвращает число - количество свойств в объекте.
+
+// const person = {
+//   name: "Bob",
+//   age: 25,
+//   job: "Developer",
+//   "like language": "Java Script"
+// };
+
+
+// function countPropertysToObject(obj) {
+//   let count = 0;
+//   for (const key in obj) {
+//     count++
+//   }
+//   return count
+// }
+
+// console.log(countPropertysToObject(person));
+
 // =================================================================================== //
 
 // 18. Задача
-// Написать функцию, на вход которой подаётся объект.Функция возвращает массив, состоящий из ключей переданного объекта
+// Написать функцию, на вход которой подаётся объект. Функция возвращает массив, состоящий из ключей переданного объекта
+
+// const person = {
+//   name: "Bob",
+//   age: 25,
+//   job: "Developer",
+//   "like language": "Java Script"
+// };
+
+
+// function getArrayConsistingOfObjectKeys(obj) {
+//   const arrayWithKeys = [];
+//   for (const key in obj) {
+//     arrayWithKeys.push(key)
+//   }
+//   return arrayWithKeys
+// }
+
+// console.log(getArrayConsistingOfObjectKeys(person));
+
 // =================================================================================== //
 
-// 19. Задача
-// Написать функцию, на вход которой подаётся объект.Функция возвращает количество объектов внутри переданного объекта.В подсчёт идут только следующие структуры данных: массивы, объекты, функции
+// TODO19. Задача
+// Написать функцию, на вход которой подаётся объект. Функция возвращает количество объектов внутри переданного объекта. В подсчёт идут только следующие структуры данных: массивы, объекты, функции.
+
+// const person = {
+//   name: "Bob",
+//   age: 25,
+//   foo: function () {
+//     console.log('I\'m foo!')
+//   },
+//   test: null,
+//   friends: [100, 100, 100],
+//   buyList: {
+//     'milk': false,
+//     'meat': true,
+//     'bread': true
+//   }
+// };
+
+// console.log(typeof person.friends);
+// console.log(typeof person.buyList);
+// console.log(typeof person.foo);
+
+// function countObjInsideObj(quantity) {
+//   let count = 0;
+//   for (const key in quantity) {
+//     if (
+//       typeof quantity[key] === 'function' ||
+//       typeof quantity[key] === 'object' &&
+//       quantity[key] !== null
+//     ) {
+//       count++
+//     }
+//   }
+//   return count
+// }
+
+// false || true && false
+
+
+
+// console.log(false || true && false); // false
+// console.log(true || true && false); // true
+
+// console.log(2 + 2 * 2); // 6
+
+
+// Порядок действий
+// **
+// * / %
+// + -
+
+// > < >= <= == === != !== typeof
+
+// && - Логическое И - Логическим умножением
+// || - Логическое ИЛИ - Логическим сложением
+
+// console.log(3 + 5 > 6 && 3 === 3);
+// console.log(8 > 6 && 3 === 3);
+// console.log(true && true);
+
+
+
+
+
+
+
+// console.log(countObjInsideObj(person));
+
+// Свойство (ключ || значение)
+// Поле
+
+// Ключ: Значение
+//
+
+
+// Почему подсчет ведется только при использовании логического или. При логическом И подсчета не производится.
+
 // =================================================================================== //
 
 // 20. Задача
-// Написать функцию, на вход которой подаётся объект.Функция возвращает количество массивов внутри переданного объекта.
+// Написать функцию, на вход которой подаётся объект. Функция возвращает количество массивов внутри переданного объекта.
+
+
+// const person = {
+//   name: "Bob",
+//   age: 25,
+//   friends: [100, 100, 100],
+//   countries: ['England', 'Australia', 'Russia'],
+//   car: ['uaz', 'volvo', 'ferrari', 'vaz', 'opel',],
+// };
+
+// function getQuntityArrayInObject(obj) {
+//   let counrArray = 0;
+//   for (const key in obj) {
+//     if (Array.isArray(obj[key])) {
+//       counrArray++
+//     }
+//     // if (typeof obj[key] === 'object') {
+//     //   counrArray++
+//     // }
+//   }
+//   return counrArray
+// }
+
+// console.log(getQuntityArrayInObject(person));
+
 // =================================================================================== //
 
 // 21. Задача
-// Написать функцию, на вход которой подаётся объект.Функция возвращает массив, состоящий из значений переданного объекта.
+// Написать функцию, на вход которой подаётся объект. Функция возвращает массив, состоящий из значений переданного объекта.
+
+// const countries = {
+//   England: 'London',
+//   Australia: 'Sindey',
+//   'More countries': ['Moscow', 'Washington', 'Barselona', 'Rome'],
+//   car: ['uaz', 'volvo', 'ferrari', 'vaz', 'opel',],
+// }
+
+
+// function getArray(obj) {
+//   const arrayWithValues = [];
+//   for (const key in obj) {
+//     arrayWithValues.push(obj[key]);
+//   }
+//   return arrayWithValues
+// }
+
+// console.log(getArray(countries));
+
 // =================================================================================== //
 
 // 22. Задача
-// Написать функци, на вход которой подаётся массив.Функция возвращает объект с ключами типа данных и количеством, которые находятся в массиве.
+// Написать функцию, на вход которой подаётся массив. Функция возвращает объект с ключами типа данных и количеством, которые находятся в массиве.
 
-// // Например в массиве testArray:
+// Например в массиве testArray:
 // const testArray = ['headline', 7, 5, null, ['array'], true, null, -3, 4 'false', 7, 8, 'link', 1, false, 0, -3 'button', undefined, { name: 'Pavel' }];
 
-// // После вызова функции вернётся объект:
+// После вызова функции вернётся объект:
 // const result = {
 //   string: 4,
 //   number: 9,
@@ -302,6 +459,44 @@
 //   boolean: 2,
 //   object: 2
 // };
+
+
+// const testArray = ['headline', 7, 5, null, ['array'], true, null, -3, 4, 'false', 7, 8, 'link', 1, false, 0, -3, 'button', undefined, { name: 'Pavel' }];
+
+
+// function getObjWithDataKeys(obj) {
+//   const result = {};
+//   let countStr = 0;
+//   let countNumb = 0;
+//   let countNull = 0;
+//   let countUndefined = 0;
+//   let countBoolean = 0;
+//   let countObject = 0;
+//   for (const el of obj) {
+//     if (typeof el === 'string') {
+//       countStr++;
+//     } if (typeof el === 'number') {
+//       countNumb++;
+//     } if (el === null) {
+//       countNull++;
+//     } if (typeof el === 'undefined') {
+//       countUndefined++;
+//     } if (typeof el === 'boolean') {
+//       countBoolean++;
+//     } if (typeof el === 'object' && el !== null) {
+//       countObject++;
+//     }
+//   }
+//   return (`String: ${countStr},
+//   Number: ${countNumb},
+//   null: ${countNull},
+//   undefined: ${countUndefined},
+//   boolean: ${countBoolean},
+//   object: ${countObject}`);
+// }
+
+// console.log(getObjWithDataKeys(testArray));
+
 // =================================================================================== //
 
 // 23. Задача
@@ -310,22 +505,22 @@
 
 // const user1 = { isAdmin: false };
 // const user2 = { isAdmin: false };
-// console.log(user1 === user2); // ?
+// console.log(user1 === user2); // false
 
 // const copyUser1 = user1;
-// console.log(copyUser1 === user1); // ?
+// console.log(copyUser1 === user1); // true
 // =================================================================================== //
 
 // 24. Задача
-// Написать функци, на вход которой подаётся объект.Функция возвращает объект с ключами типа данных и количеством, которые находятся в объекте.
+// Написать функци, на вход которой подаётся объект. Функция возвращает объект с ключами типа данных и количеством, которые находятся в объекте.
 
 // Например в объекте person;
 // const person = {
 //   name: "Bob",
 //   age: 25,
 //   job: "Developer",
-//   "like language": "Java Script"
-//     test: undefined,
+//   "like language": "Java Script",
+//   test: undefined,
 //   nuller: null,
 //   isHuman: true,
 //   item: ['bag', 'pen']
@@ -340,21 +535,64 @@
 //           boolean: 1,
 //             object: 1
 // };
+
+// function getObjectWithKeysDataTypes(obj) {
+//   let countStr = 0;
+//   let countNumb = 0;
+//   let countNull = 0;
+//   let countUndefined = 0;
+//   let countBoolean = 0;
+//   let countObject = 0;
+
+//   for (const key in obj) {
+//     if (typeof obj[key] === 'string') {
+//       countStr++
+//     } if (typeof obj[key] === 'number') {
+//       countNumb++;
+//     } if (obj[key] === null) {
+//       countNull++;
+//     } if (typeof obj[key] === 'undefined') {
+//       countUndefined++;
+//     } if (typeof obj[key] === 'boolean') {
+//       countBoolean++;
+//     } if (typeof obj[key] === 'object' && obj[key] !== null) {
+//       countObject++;
+//     }
+//   }
+//   return (`String: ${countStr},
+//   Number: ${countNumb},
+//   null: ${countNull},
+//   undefined: ${countUndefined},
+//   boolean: ${countBoolean},
+//   object: ${countObject}`);
+// }
+// console.log(getObjectWithKeysDataTypes(person));
+
 // =================================================================================== //
 
-// 25. Задача
+// TODO 25. Задача
 // Дан объект bob, удалить у него все свойства со знаечниями undefined и null, пользуясь циклом.
 
 // const bob = {
 //   name: "Bob",
 //   age: 25,
 //   job: "Developer",
-//   "like language": "Java Script"
-//     test: undefined,
+//   "like language": "Java Script",
+//   test: undefined,
 //   nuller: null,
 //   isHuman: true,
 //   item: ['bag', 'pen']
 // };
+
+// for (const key in bob) {
+//   if (bob[key] === null || typeof bob[key] === 'undefined') {
+//     delete bob[key];
+//   }
+// }
+// console.log(bob);
+
+// Вопрос применения логического И и ИЛИ
+
 // =================================================================================== //
 
 // 26. Задача
@@ -370,8 +608,8 @@
 // const copyUser = user;
 // copyUser.name = "Lawlet";
 
-// console.log(copyUser.name); // ?
-// console.log(user.name); // ?
+// console.log(copyUser.name); // Lawlet
+// console.log(user.name); // Lawlet
 // =================================================================================== //
 
 // 27. Задача
@@ -384,7 +622,7 @@
 //   age: 33,
 // };
 
-// console.log(rename(user, "Ben")); // ?
+// console.log(rename(user, "Ben")); // Ben
 
 // function rename(obj, newName) {
 //   obj.name = newName;
@@ -404,10 +642,52 @@
 // Добавить в объект ключ, название которого лежит в переменной propText, со значением true.
 // Добавить в массив friendList имя: Alph и Rich.
 // Вывести все свойства в консоль в виде: <ключ>: <значение>;.
+
+
+// const player = {
+//   name: 'Vita',
+//   money: 1000,
+//   level: 1
+// }
+
+// player.friendList = [];
+// player['likes fly'] = false;
+
+// let propText = 'isBetaTester';
+// player[propText] = true;
+
+// player.friendList.push('Alph', 'Rich')
+
+// for (const key in player) {
+//   console.log(`${key}: ${player[key]}`);
+// }
+
 // =================================================================================== //
 
 //   29. Задача
 //   Написать функцию, на вход которой подаётся объект. Функция возвращает новый объект, состоящий только из текстовых свойств переданного объекта.
+
+// const user = {
+//   name: "Roger",
+//   job: "Workman",
+//   age: 33,
+// };
+
+
+// function newObject(obj) {
+//   const myObj = {};
+//   for (const key in obj) {
+//     if (typeof obj[key] === 'string') {
+//       myObj[key] = obj[key]
+//     }
+//   }
+//   return myObj
+// }
+
+// console.log(newObject(user));
+
+
+// =================================================================================== //
 
 //   30. Задача
 //   Создать объект и заполнить выдуманными данными, используя где нужно, вложенный массив или объект:
@@ -419,6 +699,22 @@
 //   Завод (адрес у завода, название);
 //   Владелец (имя, фамилия, дата рождения, пол);
 //   Вывести каждое значение всех свойств по отдельности через console.log().
+
+// const modelCar = {
+//   'Serial Number': 25469854125,
+//   'Car brand': 'Audi',
+//   'Year of release': 2022,
+//   fartory: ['Volkswagen Group', 'Ingolstadt'],
+//   owner: ['Leon', 'Ivanov', 1965, 'male'],
+// }
+
+// console.log(modelCar);
+// console.log(modelCar['Serial Number']);
+// console.log(modelCar['Car brand']);
+// console.log(modelCar['Year of release']);
+// console.log(modelCar.fartory);
+// console.log(modelCar.owner);
+
 // =================================================================================== //
 
 //   31. Задача
@@ -432,6 +728,30 @@
 //   Количество этажей;
 //   Список партнёров (названия компаний, сайт партнёра);
 //   Вывести каждое значение всех свойств по отдельности через console.log().
+
+// const shop = {
+//   name: 'Elysian',
+//   food: ['Prosciutto di Parma', 'Focaccia', 'Fiorentna'],
+//   'household goods': ['Watering hose', 'Swing', 'Barbecue'],
+//   cosmetic: ['Cartier', 'Hermes', 'Chanel'],
+//   'food court': true,
+//   parking: true,
+//   'number of floors': 12,
+//   partners: { 'Traiding house': 'Elysian', 'Perfume boutique': 'Paris', embassy: 'Russia in Paris' }
+// }
+
+
+// console.log(Object.keys(shop));
+
+// console.log(shop.name);
+// console.log(shop.food);
+// console.log(shop['household goods']);
+// console.log(shop.cosmetic);
+// console.log(shop['food court']);
+// console.log(shop.parking);
+// console.log(shop['number of floors']);
+// console.log(shop.partners);
+
 // =================================================================================== //
 
 //   32. Задача
@@ -445,28 +765,263 @@
 //   Адрес (название улицы и город (название города и название страны, где город));
 //   Список технологий, который знает ученик (id технологии и название технологии);
 //   Вывести каждое значение всех свойств по отдельности через console.log().
+
+// const myShop = {
+//   name: 'Aleksey',
+//   'id student': 5552245,
+//   age: 42,
+//   isActive: true,
+//   address: { street: 'friendship of peoples', city: { 'Nighnevartovsk': 'Russia' } }, technologies: [{ id: 6598874 }, { 'name of the technology': 'JavaScript' }]
+// }
+
+// console.log(myShop);
+// console.log(myShop.name);
+// console.log(myShop['id student']);
+// console.log(myShop.age);
+// console.log(myShop.isActive);
+// console.log(myShop.address);
+// console.log(myShop.id);
 // =================================================================================== //
 
 //   33. Задача
 //   Придумайте на подобии 26-28 задачи похожие объекты и опишите их и выведите каждое свойство в консоль.
+
+
+
 // =================================================================================== //
 
 //   34. Задача
 //   Написать функцию, которая проверяет, является ли переданный параметр примитивом.
+
+// function isPrimitive(check) {
+//   // return (typeof check === 'object' && check === null) && typeof check !== 'function'
+//   return typeof check !== 'object' && typeof check !== 'function' || check === null
+// }
+
+// console.log(isPrimitive('summer'));
+// console.log(isPrimitive(123));
+// console.log(isPrimitive(true));
+// console.log(isPrimitive(undefined));
+// console.log(isPrimitive(null));
+// console.log(isPrimitive([]));
+// console.log(isPrimitive({}));
+// console.log(isPrimitive(() => { }));
+// console.log(isPrimitive(function () { }));
+
+
+
+// 0. Написать функцию, которая пропускает только примитив null
+// 1. Написать функцию, которая пропускает только примитив number или string
+// 2. Написать функцию, которая пропускает только все примитивы кроме boolean
+// 3. Написать функцию, которая пропускает только все примитивы кроме null
+// 4. Написать функцию, которая пропускает только все примитивы кроме boolean и null
+// 5. Написать функцию, которая пропускает только все ссылочные типы данных, кроме function
+// 6. Написать функцию, которая пропускает только все ссылочные типы данных, кроме структура данных array
+// 7. Написать функцию, которая пропускает только примитив null или undefined
+// 8. Написать функцию, которая пропускает только все ссылочные типы данных
+// 9. Написать функцию, которая пропускает только все ссылочные типы данных, кроме объекта (массивы, функции и т.д. пропускает)
+
+
+
+// 0. Написать функцию, которая пропускает только примитив null
+
+// function getNull(params) {
+//   return params === null
+// }
+
+// console.log(getNull('summer'));
+// console.log(getNull(123));
+// console.log(getNull(true));
+// console.log(getNull(undefined));
+// console.log(getNull(null));
+// console.log(getNull([]));
+// console.log(getNull({}));
+// console.log(getNull(() => { }));
+// console.log(getNull(function () { }));
+
+// 1. Написать функцию, которая пропускает только примитив number или string
+
+// function getNull(params) {
+//   return typeof params === 'string' || typeof params === 'number'
+// }
+
+// console.log(getNull('summer'));
+// console.log(getNull(123));
+// console.log(getNull(true));
+// console.log(getNull(undefined));
+// console.log(getNull(null));
+// console.log(getNull([]));
+// console.log(getNull({}));
+// console.log(getNull(() => { }));
+// console.log(getNull(function () { }));
+
+// 2. Написать функцию, которая пропускает только все примитивы кроме boolean
+
+// function getNull(params) {
+//   return typeof params === 'string' || typeof params === 'number' || typeof params === 'undefined' || params === null && typeof params !== 'boolean'
+// }
+
+// console.log(getNull('summer'));
+// console.log(getNull(123));
+// console.log(getNull(true));
+// console.log(getNull(undefined));
+// console.log(getNull(null));
+// console.log(getNull([]));
+// console.log(getNull({}));
+// console.log(getNull(() => { }));
+// console.log(getNull(function () { }));
+
+
+// 3. Написать функцию, которая пропускает только все примитивы кроме null
+
+// function getNull(params) {
+//   return typeof params === 'string' || typeof params === 'number' || typeof params === 'undefined' || typeof params === 'boolean' && params !== null && typeof params !== 'object' && typeof params !== 'function'
+// }
+
+// console.log(getNull('summer'));
+// console.log(getNull(123));
+// console.log(getNull(true));
+// console.log(getNull(undefined));
+// console.log(getNull(null));
+// console.log(getNull([]));
+// console.log(getNull({}));
+// console.log(getNull(() => { }));
+// console.log(getNull(function () { }));
+
+// 4. Написать функцию, которая пропускает только все примитивы кроме boolean и null
+
+// function getNull(params) {
+//   return typeof params === 'string' || typeof params === 'number' || typeof params === 'undefined' || typeof params !== 'boolean' && params !== null && typeof params !== 'object' && typeof params !== 'function'
+// }
+
+// console.log(getNull('summer'));
+// console.log(getNull(123));
+// console.log(getNull(true));
+// console.log(getNull(undefined));
+// console.log(getNull(null));
+// console.log(getNull([]));
+// console.log(getNull({}));
+// console.log(getNull(() => { }));
+// console.log(getNull(function () { }));
+
+// 5. Написать функцию, которая пропускает только все ссылочные типы данных, кроме function
+
+// function getNull(params) {
+//   return typeof params === 'object' && typeof params !== 'function'
+// }
+
+// console.log(getNull([]));
+// console.log(getNull({}));
+// console.log(getNull(() => { }));
+// console.log(getNull(function () { }));
+
+// 6. Написать функцию, которая пропускает только все ссылочные типы данных, кроме структура данных array
+
+// function getNull(params) {
+//   return !Array.isArray(params)
+// }
+
+// console.log(getNull([]));
+// console.log(getNull({}));
+// console.log(getNull(() => { }));
+// console.log(getNull(function () { }));
+
+
+// 7. Написать функцию, которая пропускает только примитив null или undefined
+
+// function getNull(params) {
+//   return typeof params === 'undefined' || params === null
+// }
+
+// console.log(getNull('summer'));
+// console.log(getNull(123));
+// console.log(getNull(true));
+// console.log(getNull(undefined));
+// console.log(getNull(null));
+// console.log(getNull([]));
+// console.log(getNull({}));
+// console.log(getNull(() => { }));
+// console.log(getNull(function () { }));
+
+// 8. Написать функцию, которая пропускает только все ссылочные типы данных
+
+// function getNull(params) {
+//   return params !== null && typeof params === 'object' || typeof params === 'function'
+// }
+
+// console.log(getNull(null));
+// console.log(getNull([]));
+// console.log(getNull({}));
+// console.log(getNull(() => { }));
+// console.log(getNull(function () { }));
+
+// 9. Написать функцию, которая пропускает только все ссылочные типы данных, кроме объекта (массивы, функции и т.д. пропускает)
+
+// function getNull(params) {
+//   return Array.isArray(params) || typeof params === 'function' || params === null
+// }
+
+// console.log(getNull(null));
+// console.log(getNull([]));
+// console.log(getNull({}));
+// console.log(getNull(() => { }));
+// console.log(getNull(function () { }));
+
+
+
+
+// function get(params) {
+  // console.log(typeof params !== 'string' || typeof params !== 'number');
+  // console.log(typeof params !== 'string' && typeof params !== 'number');
+  // return typeof params !== 'string' && typeof params !== 'number'
+  // return Array.isArray(params)
+// }
+// console.log(get('str'));
+// console.log(get(123));
+// console.log(get(true));
+// console.log(get(undefined));
+
+// console.log(get([]));
+
+
+
+// function name() {
+// }
+
+// const name = function () {}
+// const name2 = () => {}
+// const test = 10
+
+// string, number, boolean, undefined, null
+// object
+//
+
+
+
 // =================================================================================== //
 
 //   35. Задача
 //   Выполнить рефакторинг кода.
 
-//   function changeTaskStatusAC(todolistId, taskId, newIsDone) {
-//     const CHANGE_TASK_STATUS = 'CHANGE-TASK-STATUS';
+// function changeTaskStatusAC(todolistId, taskId, newIsDone) {
+//   const CHANGE_TASK_STATUS = 'CHANGE-TASK-STATUS';
 //   return {
 //     type: CHANGE_TASK_STATUS,
-//   todolistId: todolistId,
-//   taskId: taskId,
-//   isDone: newIsDone
-//     };
+//     todolistId: todolistId,
+//     taskId: taskId,
+//     isDone: newIsDone
+//   };
 // }
+
+// function changeTaskStatusAC(todolistId, taskId, isDone) {
+//   return {
+//     type: 'CHANGE-TASK-STATUS',
+//     todolistId,
+//     taskId,
+//     isDone
+//   };
+// }
+// console.log(changeTaskStatusAC('text', 20, true));
 // =================================================================================== //
 
 //   ★ Задачи повышенной сложности ★
