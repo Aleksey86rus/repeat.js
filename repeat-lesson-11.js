@@ -4,41 +4,171 @@
 
 // for;
 // for of;
+
+// let userStr = 'AlisA';
+
+// // for (let i = 0; i <= userStr.length; i++) {
+// //   console.log(userStr[i]);
+// // }
+
+// for (const el of userStr) {
+//   console.log(el);
+// }
+
 // ================================================================================== //
 // 2. Задача
 // Написать функцию, на вход которой подаётся строка, функция возвращает индекс последнего элемента не зависимо от количества символов.
+
+// let userStr = 'textd';
+
+// function getIndexLastEl(str) {
+//   return str.length - 1
+// }
+
+// console.log(getIndexLastEl(userStr));
+
 // ================================================================================== //
 
 // 3. Задача
 // Написать функцию, на вход которого подаётся строка. Функция должна вернуть первый символ, предпоследний и последний.
+
+
+// let userStr = 'concert';
+
+// function getIndFirstPenultimateAndLastSymb(str) {
+//   return {
+//     first: str[0],
+//     penult: str[str.length - 2],
+//     last: str[str.length - 1]
+//   }
+// }
+
+// function getIndFirstPenultimateAndLastSymb(str) {
+//   return [
+//     str[0],
+//     str[str.length - 2],
+//     str[str.length - 1]
+//   ]
+// }
+// console.log(getIndFirstPenultimateAndLastSymb(userStr));
+
 // ================================================================================== //
 
 // 4. Задача
 // Написать функцию, на вход которой подаётся две строки. Если первая строка длинее второй, то к первой доклеивается вторая, иначе - наоборот. Функция возвращает результирующую строку.
+
+// let userStr1 = 'concert';
+// let userStr2 = 'Moscow';
+
+// function getResultString(str1, str2) {
+//   if (str1.length > str2.length) {
+//     return str1 + ' ' + str2
+//   } else {
+//     return str2 + ' ' + str1
+//   }
+// }
+
+// function getResultString(str1, str2) {
+//   return str1.length > str2.length ? str1 + ' ' + str2 : str2 + ' ' + str1
+// }
+// console.log(getResultString(userStr1, userStr2));
+
 // ================================================================================== //
 
 // 5. Задача
 // Написать функцию, на вход которой подаётся строка, функция возвращает количество, встречающихся букв a незасивимо от того какой язык: русский или английский.
+
+
+// let userStr = 'abracadabra';
+// // let userStr = 'абракадабра';
+
+// function getQuantitySymbolA(str) {
+//   let count = 0;
+//   for (const el of str) {
+//     (el === 'a' || el === 'а') && count++
+//   }
+//   return count
+// }
+
+// console.log(getQuantitySymbolA(userStr));
+
 // ================================================================================== //
 
 // 6. Задача
 // Написать функцию, на вход которой подаётся 2 параметра (1 параметр - строка, 2 параметр - символ). Функция возвращает число - количество встречающихся символов в строке.
+
+
+// let userStr = 'universe';
+// let userSymb = 'e';
+
+// function getQuntitySymbolInString(str, symb) {
+//   let countSymb = 0
+//   for (const el of str) {
+//     if (el === symb) countSymb++
+//   }
+//   return countSymb
+// }
+
+// console.log(getQuntitySymbolInString(userStr, userSymb));
+
 // ================================================================================== //
 
 // 7. Задача
 // Написать функцию, на вход которой подаётся 2 строки. Функция проверяет содержится ли вторая строка в первой.
+
+
+// let userStr1 = 'black hole';
+// let userStr2 = 'hole';
+
+// function checkIfItContains(str1, str2) {
+//   return str1.includes(str2)
+// }
+
+// console.log(checkIfItContains(userStr1, userStr2));
+
 // ================================================================================== //
 
 // 8. Задача
 // Написать функцию, на вход которой подаётся 2 строки. Функция проверяет равны ли эти строки независимо от регистра.
+
+// let userStr1 = 'black';
+// let userStr2 = 'Black';
+
+// function checkStringEqual(str1, str2) {
+//   return str1.toLowerCase() === str2.toLowerCase();
+// }
+
+// console.log(checkStringEqual(userStr1, userStr2));
+
 // ================================================================================== //
 
-// 9. Задача
+// TODO 9. Задача
 // Написать функцию, на вход которой подаётся 3 строки, которая проверяет есть вторая или третья строка в первой. Функция может работать как с двумя переменными, так и стремя.
+
+
+// let userStr1 = 'black white yellow';
+// let userStr2 = 'white';
+// let userStr3 = 'yellow';
+
+// function checkSecondAndThirdStrInSecond(str1, str2, str3) {
+//   return str1.includes(str2)
+// }
+
+// console.log(checkSecondAndThirdStrInSecond(userStr1, userStr2, userStr3));
+
 // ================================================================================== //
 
 // 10. Задача
 // Написать функцию, на вход которой подаётся строка. Функция возвращает строку в нижнем регистре и убирает лишние пробелы по бокам.
+
+// let userStr1 = '    Yellow ';
+
+// function getStringToLowerCase(str) {
+//   return str.trim().toLowerCase()
+// }
+
+// console.log(getStringToLowerCase(userStr1));
+
 // ================================================================================== //
 
 // 11. Задача
