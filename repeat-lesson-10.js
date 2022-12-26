@@ -1,20 +1,20 @@
 // Задачи по теме 10. Object
 // Дан объект user, выполнить задачи 1 - 6:
 
-// const user = {
-//   name: "Peter",
-//   age: 33,
-//   job: "Developer",
+const user = {
+  name: "Peter",
+  age: 33,
+  job: "Developer",
 
-//   "my address": {
-//     city: "Moscow",
-//     country: "Russia",
-//     abroad: ["Vienna", "Paris", "London", "Miami"]
-//   },
-//   item: ["bag", "book", "pencil"],
-//   more: null,
-//   key: "Aha-ha-ha-ha"
-// };
+  "my address": {
+    city: "Moscow",
+    country: "Russia",
+    abroad: ["Vienna", "Paris", "London", "Miami", "LA"]
+  },
+  item: ["bag", "book", "pencil"],
+  more: null,
+  key: "Aha-ha-ha-ha"
+};
 
 // =================================================================================== //
 
@@ -26,24 +26,32 @@
 
 // 2. Задача
 // Изменить возраст на 4 года меньше.
-// user.age = 29;
+// user.age = user.age - 4
+// user.age -= 4
 
-// console.log(user.age - 4);
-// console.log(user.age);
+
+
 
 // =================================================================================== //
 
 // 3. Задача
 // Вывести в консоль последний город из заграничного массива в объекте "my address".
 
-// console.log(user['my address'].abroad[3]);
+// const abroad = user['my address'].abroad
+// console.log(abroad[abroad.length - 1]);
+
+// Пло[ое решение]
+// console.log(user['my address'].abroad[user['my address'].abroad.length - 1]);
+
+
+// console.log(user['my address'].abroad[abroad.length - 1]);
 
 // =================================================================================== //
 
 // 4. Задача
 // Вывести в консоль в столбик все города из заграничного массива.
 
-// cityAbroad = user['my address'].abroad;
+// const cityAbroad = user['my address'].abroad;
 // for (const key in cityAbroad) {
 //   console.log(cityAbroad[key]);
 // }

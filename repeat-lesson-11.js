@@ -143,18 +143,50 @@
 // ================================================================================== //
 
 // TODO 9. Задача
-// Написать функцию, на вход которой подаётся 3 строки, которая проверяет есть вторая или третья строка в первой. Функция может работать как с двумя переменными, так и стремя.
+// Написать функцию, на вход которой подаётся 3 строки, которая проверяет есть вторая или третья строка в первой. 
+//Функция может работать как с двумя переменными, так и с тремя.
 
 
-// let userStr1 = 'black white yellow';
-// let userStr2 = 'white';
-// let userStr3 = 'yellow';
+// let userStr1 = 'black white yellow undefined';
 
-// function checkSecondAndThirdStrInSecond(str1, str2, str3) {
-//   return str1.includes(str2)
+
+// function checkSecondAndThirdStrInSecond(str1, str2, str3 = 'test') {
+//   return str1.includes(str2) || str1.includes(str3)
 // }
 
-// console.log(checkSecondAndThirdStrInSecond(userStr1, userStr2, userStr3));
+
+// FIXME: 
+// 1) Как проверить содержатся ли 2 подстроки в первой
+// 2) Как работает параметр по умолчанию?
+// Что такое значение по умолчанию?
+// Зачем он нужен?
+// Когда он срабатывает? (Когда срабатывает присваивание внутри скобок str3 = 'test')
+// Когда нужен параметр по умлчанию, а когда нет?
+
+
+// console.log(checkSecondAndThirdStrInSecond(userStr1, 'black', 'typo')); // true
+// console.log(checkSecondAndThirdStrInSecond(userStr1, 'typo', 'typo')); // false
+// console.log(checkSecondAndThirdStrInSecond(userStr1, 'typo', 'black')); // true
+// console.log(checkSecondAndThirdStrInSecond(userStr1, 'white', 'yellow')); // true
+// console.log(checkSecondAndThirdStrInSecond(userStr1, 'n427', 'yellow')); // true
+// console.log(checkSecondAndThirdStrInSecond(userStr1, 'white', 'boom')); // true
+// console.log(checkSecondAndThirdStrInSecond(userStr1, 'life', 'boom')); // false
+// console.log(checkSecondAndThirdStrInSecond(userStr1, 'life', 'black')); // true
+// console.log(checkSecondAndThirdStrInSecond(userStr1, 'yellow', 'black')); // true
+
+
+// console.log(checkSecondAndThirdStrInSecond(userStr1, 'life', undefined)); // false
+// console.log(checkSecondAndThirdStrInSecond(userStr1, 'life')); // false
+// console.log(checkSecondAndThirdStrInSecond(userStr1, 'life', 'undefined')); // true
+// console.log(checkSecondAndThirdStrInSecond(userStr1, 'black')); // true
+// console.log(checkSecondAndThirdStrInSecond(userStr1, 'yellow')); // true
+
+
+
+
+{/* <string>.includes(<string>, <number>) */ }
+
+
 
 // ================================================================================== //
 
@@ -173,43 +205,97 @@
 
 // 11. Задача
 // Написать функцию, на вход которой подаётся 2 строки. Функция проверяет начинается ли первая строка со второй строки или заканчивается ей?
+
+// let userStr1 = 'black yellow';
+// let userStr2 = 'yellow';
+// // let userStr2 = 'black';
+
+// function checkFirstString(str1, str2) {
+//   return str1.startsWith(str2) || str1.endsWith(str2)
+// }
+
+// console.log(checkFirstString(userStr1, userStr2));
+
 // ================================================================================== //
 
 // 12. Задача
 // Получить массив строк с числами из строки: 100==!==200==!==500==!==700
+
+// let userStr = '100==!==200==!==500==!==700';
+
+// console.log(userStr.split('==!=='));
+
 // ================================================================================== //
 
 // 13. Задача
 // Получить массив имён из строки: Pavel, Paul, David, Michael, Paper
+
+// let userStr = 'Pavel, Paul, David, Michael, Paper';
+
+// console.log(userStr.split(', '));
+
 // ================================================================================== //
 
 // 14. Задача
 // Получить массив овощей из строки: carot: unknown, potato: unknown, cabage
+
+// let userStr = 'carot: unknown, potato: unknown, cabage';
+
+// console.log(userStr.split(', '));
+
 // ================================================================================== //
 
 // 15. Задача
 // Не выполняя код, дать ответ:
 // Что выведется в консоль? Ответ записать в комментарий.
 
-// console.log('Tester'.split('').join('')); //
-// console.log('23(!)11(!)15(!)51'.split('(!)')); //
-// console.log('Tester'.split('').join(', ')); //
-// console.log('23(!)11(!)15(!)51'.split('(!)').join(',')); //
-// console.log('Super'.split('').reverse().join('')); //
+// console.log('Tester'.split('').join('')); // Tester
+// console.log('23(!)11(!)15(!)51'.split('(!)')); // [23,11,15,51]
+// console.log('Tester'.split('').join(', ')); // T, e, s, t, e, r
+// console.log('23(!)11(!)15(!)51'.split('(!)').join(',')); // 23,11,15,51
+// console.log('Super'.split('').reverse().join('')); // repuS
 
-// console.log(['Peter', 'John', 'Smith', 'Bob', 'Gale'].join(', ')); //
-// console.log([111, 222, 333, 444].join('-!-')); //
-// console.log(Array.from('Super').reverse().join('')); //
-// console.log('test - word -  - paper - -').join(' - ')); //
-// console.log(': unknown, carot: unknown, potato: unknown, cabage: unknown,'.split(': unknown,')); //
+// console.log(['Peter', 'John', 'Smith', 'Bob', 'Gale'].join(', ')); // Peter, John, Smith, Bob, Gale
+// console.log([111, 222, 333, 444].join('-!-')); // 111-!-,222-!-,333-!-,444
+// console.log(Array.from('Super').reverse().join('')); // repuS
+// console.log('test - word -  - paper - -').split(' - '); // ?
+
+//'-'
+// ['test', 'word', '', paper, '-']
+console.log(': unknown, carrot: unknown, potato: unknown, cabage: unknown,'.split(': unknown,')); // [carrot, potato, cabage] //?
+
+const test = '+10+5+7+'
+const test2 = '10+5+7'
+const test3 = 'bread, eggs, water, cola'
+
+console.log(test.split('+'));
+console.log(test2.split('+'));
+console.log(test3.split(', '));
+
 // ================================================================================== //
 
 // 16. Задача
 // Написать функцию, на вход которой подаётся строка. Функция возвращает массив, состоящий из символов этой строки. Решить задачу двумя способами.
+
+// let userStr = 'result';
+
+// function getArrayFromSymbols(string) {
+//   // return string.split('')
+//   return Array.from(string)
+// }
+
+// console.log(getArrayFromSymbols(userStr));
+
 // ================================================================================== //
 
 // 17. Задача
 // Написать функцию, на вход которой подаётся 2 параметра (1 параметр - строка, 2 параметр - символ). Функция возвращает строку, состоящая без символа.
+
+
+
+
+
+
 // ================================================================================== //
 
 // 18. Задача
