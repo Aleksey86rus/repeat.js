@@ -148,12 +148,14 @@
 
 
 // let userStr1 = 'black white yellow undefined';
+// let userStr1 = 'black white yellow';
 
 
 // function checkSecondAndThirdStrInSecond(str1, str2, str3 = 'test') {
 //   return str1.includes(str2) || str1.includes(str3)
 // }
 
+// console.log(checkSecondAndThirdStrInSecond(userStr1, 'test', 'black'));
 
 // FIXME: 
 // 1) Как проверить содержатся ли 2 подстроки в первой
@@ -161,7 +163,7 @@
 // Что такое значение по умолчанию?
 // Зачем он нужен?
 // Когда он срабатывает? (Когда срабатывает присваивание внутри скобок str3 = 'test')
-// Когда нужен параметр по умлчанию, а когда нет?
+// Когда нужен параметр по умолчанию, а когда нет?
 
 
 // console.log(checkSecondAndThirdStrInSecond(userStr1, 'black', 'typo')); // true
@@ -186,8 +188,11 @@
 
 {/* <string>.includes(<string>, <number>) */ }
 
+// function showMessage(from, text = "текст не добавлен") {
+//   return (from + ": " + text);
+// }
 
-
+// console.log(showMessage("Аня")); // Аня: текст не добавлен
 // ================================================================================== //
 
 // 10. Задача
@@ -262,15 +267,15 @@
 
 //'-'
 // ['test', 'word', '', paper, '-']
-console.log(': unknown, carrot: unknown, potato: unknown, cabage: unknown,'.split(': unknown,')); // [carrot, potato, cabage] //?
+// console.log(': unknown, carrot: unknown, potato: unknown, cabage: unknown,'.split(': unknown,')); // [carrot, potato, cabage] //?
 
-const test = '+10+5+7+'
-const test2 = '10+5+7'
-const test3 = 'bread, eggs, water, cola'
+// const test = '+10+5+7+'
+// const test2 = '10+5+7'
+// const test3 = 'bread, eggs, water, cola'
 
-console.log(test.split('+'));
-console.log(test2.split('+'));
-console.log(test3.split(', '));
+// console.log(test.split('+'));
+// console.log(test2.split('+'));
+// console.log(test3.split(', '));
 
 // ================================================================================== //
 
@@ -291,15 +296,39 @@ console.log(test3.split(', '));
 // 17. Задача
 // Написать функцию, на вход которой подаётся 2 параметра (1 параметр - строка, 2 параметр - символ). Функция возвращает строку, состоящая без символа.
 
+// let userText = 'Test'
+
+// function getStringNotSymbol(str, symb) {
+//   let newStr = '';
+//   for (const el of str) {
+//     if (el !== symb) {
+//       newStr += el
+//     }
+//   }
+//   return newStr
+// }
+
+// console.log(getStringNotSymbol(userText, 'T'));
 
 
+// function getStringNotSymbol(str) {
+//   return str.slice(1, 4)
+// }
 
-
+// console.log(getStringNotSymbol(userText));
 
 // ================================================================================== //
 
 // 18. Задача
 // Написать функцию, которая обрезает переданное слово со второго символа до предпоследнего включительно.
+
+// let userStr = 'beauty'
+
+// const myFunc = str => {
+//   return str.slice(2, 5)
+// }
+// console.log(myFunc(userStr));
+
 // ================================================================================== //
 
 // 19. Задача
@@ -307,11 +336,29 @@ console.log(test3.split(', '));
 
 // Например:
 // console.log(cropString("tester", 2, 4)); // "ste"
+
+
+// let userStr = 'tester';
+
+// const myFunc = (str, start, end) => {
+//   return str.slice(start, end)
+// }
+
+// console.log(myFunc(userStr, 2, 4));
+
 // ================================================================================== //
 
 // 20. Задача
 // Написать функцию generateLink, на вход которой подаётся 3 параметра: адрес, текст, класс для тега a. Функция возвращает строку вида:
 // <a href="ссылка" class="класс">текст</a>.
+
+
+// const myFunc = (adress, clas, text) => {
+//   return `<a href="https://${adress}" class="${clas}">${text}</a>`
+// }
+
+// console.log(myFunc('vk.com', 'start__link', 'ВКонтакте'));
+
 // ================================================================================== //
 
 // 21. Задача
@@ -320,6 +367,18 @@ console.log(test3.split(', '));
 // link: адрес ссылки;
 // content: содержимое тега a;
 // className: имя класс;
+
+
+// const BackObjectOfProp = (link, className, text) => {
+//   return {
+//     link,
+//     content: text,
+//     class: className
+//   }
+// }
+
+// console.log(BackObjectOfProp('https://vk.com', 'start__link', 'ВКонтакте'));
+
 // ================================================================================== //
 
 // 22. Задача
@@ -327,18 +386,66 @@ console.log(test3.split(', '));
 
 // Диск на котором лежит файл;
 // Расширение файла;
+
+// const getObject = (pathToFile) => {
+//   const indexDisk = pathToFile.indexOf(':');
+//   const disk = pathToFile.slice(0, indexDisk);
+
+//   const indexExt = pathToFile.lastIndexOf('\s');
+//   const ext = pathToFile.slice(indexExt - 1)
+
+//   return {
+//     disk,
+//     ext
+//   }
+// }
+
+// console.log(getObject('E:\Frontend\js-native\js'));
+
 // ================================================================================== //
 
 // 23. Задача
 // Написать функцию, на вход которой подаётся строка в kebab-case, функция возращает эту же строку в lowerCamelCase cssToJs("background-color") == 'backgroundColor'; cssToJs("list-style-image") == 'listStyleImage'; cssToJs("-webkit-transition") == 'webkitTransition';
+
+// let userBackground = 'background-color';
+// let userListStyleImage = 'list-style-image';
+// let userWebkitTransition = 'webkit-trasition';
+
+
+// const getStringLowerCamelCase = (str) => {
+//   let background = str.split('-');
+
+//   for (let i = 1; i < background.length; i++) {
+//     background[i] = background[i][0].toUpperCase() + background[i].slice(1)
+//   }
+//   return background.join('')
+// }
+
+// console.log(getStringLowerCamelCase(userBackground));
+// console.log(getStringLowerCamelCase(userListStyleImage));
+// console.log(getStringLowerCamelCase(userWebkitTransition));
+
 // ================================================================================== //
 
 // 24. Задача
-// Написать функцию, на вход которой подаётся строка, содержащая класс по БЭМ, вида: class = "about__btn about__btn_disabled" В функцию подаётся строкал только вида, описанного сверху Вывести в консоль:
+// Написать функцию, на вход которой подаётся строка, содержащая класс по БЭМ, вида: class = "about__btn about__btn_disabled" В функцию подаётся строка только вида, описанного сверху Вывести в консоль:
 
 // Название блока;
 // Название элемента;
 // Название модифитора;
+
+
+// const GetBemClass = (block, element, modifier) => {
+
+//   console.log(
+//     `Название блока: ${block}
+//   Название элемента: ${element}
+//   Название модификатора:${modifier}`);
+
+// }
+
+// console.log(GetBemClass('div class=\"about\"', 'about__btn', '_disabled'));
+
 // ================================================================================== //
 
 // 25. Задача
@@ -346,10 +453,64 @@ console.log(test3.split(', '));
 
 // Сколько % в строке символов "a" и "c";
 // Программа должна работать с любым (в пределах разумного) количеством символов "a" и "с";
+
+// let stringTask = 'aaaccaaaccaacacaacc';
+
+// let stringTaskLength = stringTask.length;
+// let countLetterA = 0;
+// let countLetterC = 0;
+// let percentLetterA = 0;
+// let percentLetterC = 0;
+
+// const getObjectForPercentLetter = (str) => {
+//   for (const el of str) {
+//     if (el === 'a') {
+//       countLetterA++
+//     } else if (el === 'c') {
+//       countLetterC++
+//     }
+//     percentLetterA = (countLetterA / stringTaskLength) * 100;
+//     percentLetterC = (countLetterC / stringTaskLength) * 100
+//   }
+//   return {
+//     'Количество символов \'а\'': String(Math.floor(percentLetterA) + ' %'),
+//     'Количество символов \'с\'': String(Math.floor(percentLetterC) + ' %')
+//   };
+// }
+
+// console.log(getObjectForPercentLetter(stringTask));
+
 // ================================================================================== //
 
 // 26. Задача
 // Создать функцию, которая удаляет первый и последний символы строки, которая подаётся на вход в функцию. Функция возвращает новую строку. Если в строке меньше двух символов, то возвращать пустую строку.
+
+// let userStr = 'modifier';
+// let userStr = 'mo';
+
+// const getNewStr = (str) => {
+//   if (str.length < 2) {
+//     return '';
+//   } else {
+//     return str.slice(1, str.length - 1)
+//   }
+// }
+
+// console.log(getNewStr(userStr));
+
+
+// const getNewStr = (str) => {
+//   let newString = str.split('');
+//   newString.shift()
+//   newString.pop()
+//   if (newString.length < 2) {
+//     return ''
+//   }
+//   return newString.join('')
+// }
+
+// console.log(getNewStr(userStr));
+
 // ================================================================================== //
 
 // 27. Задача
@@ -357,34 +518,126 @@ console.log(test3.split(', '));
 
 // 'world'  =>  'dlrow'
 // 'word'   =>  'drow'
+
+// let userStr1 = 'world';
+// let userStr2 = 'word';
+
+// const getReverseString = (str) => {
+//   return str.split('').reverse().join('')
+// }
+
+// console.log(getReverseString(userStr1));
+// console.log(getReverseString(userStr2));
 // ================================================================================== //
 
 // 28. Задача
 // Написать функцию, которая удаляет все пробелы из строки. Функция возвращает новую строку.
+
+// let userStr = '   hello  ';
+
+// const getNewStr = (str) => {
+//   let newString = str.trim()
+//   return newString
+// }
+
+// console.log(getNewStr(userStr));
+
 // ================================================================================== //
 
 // 29. Задача
 // Написать функцию, на вход которой подаётся 2 строки: имя и фамилия. Функция возвращает одну строку - инициалы через точки.
 
 // Alexander Volkov --> A.V.
+
+// let userName = 'Alexander';
+// let userLastName = 'Volkov';
+
+// const getInitials = (name, surname) => {
+//   return name.slice(0, 1).padEnd(2, '.').concat(surname.slice(0, 1)).padEnd(4, '.')
+
+// }
+
+// console.log(getInitials(userName, userLastName));
+
+// console.log(userName.padEnd(10, '.'));
+// console.log(userName.padStart(10, '.'));
+
 // ================================================================================== //
 
-// 30. Задача
+// TODO 30. Задача
 // Написать функцию, на вход которой подаётся строка с текстом. Функция переворачивает все символы в слове наоборот, оставляя порядок слов тем же самым.
 
 // Example:
 // "The greatest victory is that which requires no battle" -->
 // "ehT testaerg yrotciv si taht hcihw seriuqer on elttab"
+
+
+// let userStr = 'The greatest victory is that which requires no battle';
+
+// const getReverseStr = (str) => {
+//   let newStr = str.split('')
+//   // for (let i = 0; i < newStr.length; i++) {
+//   //   newStr[i]
+//   // }
+
+
+//   return newStr.join('')
+// }
+
+// console.log(getReverseStr(userStr));
+
+
+// let userStr = 'The greatest';
+
+// for (let i = 0; i < userStr.length; i++) {
+//   console.log(userStr[i].split(' ').reverse());
+// }
+
+
+// console.log(userStr.split('').reverse().join(''));
+
+
 // ================================================================================== //
 
 // 31. Задача
 // Написать функцию, которая преобразует массив строк в массив чисел, где каждое число - количество символов в строке. Функция возвращает новый массив.
 
 // Example: ['a', 'as', 'red', 'test'] --> [1, 2, 3, 4]
+
+// const userArray = ['a', 'as', 'red', 'text'];
+
+// const getQuntitySymbolForString = (arr) => {
+//   const arrLength = []
+//   for (let i = 0; i < arr.length; i++) {
+//     arrLength.push(arr[i].length)
+//   }
+//   return arrLength
+// }
+// console.log(getQuntitySymbolForString(userArray));
+
+
+// let userArray = ['textd'];
+// console.log(userArray.join().length);
+
 // ================================================================================== //
 
-// 32. Задача
+// TODO 32. Задача
 // Написать функцию, на вход которой подаётся массив с словами. Функция мутирует массив, переворачия все слова в массиве наоборот.
+
+// const userArray = ['one', 'two', 'three', 'four']
+
+// const newUserArray = [];
+
+
+// const getMutatesArray = (arr) => {
+//   for (let i = 0; i < arr.length; i++) {
+//     newUserArray.push(arr[i])
+//   }
+//   return newUserArray.reverse()
+// }
+
+// console.log(getMutatesArray(userArray));
+
 // ================================================================================== //
 
 // 33. Задача
@@ -393,6 +646,10 @@ console.log(test3.split(', '));
 // Количество заглавных букв;
 // Количество строчных букв;
 // Количество чисел;
+
+
+
+
 // ================================================================================== //
 
 // 34. Задача
