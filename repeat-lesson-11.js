@@ -147,15 +147,14 @@
 //Функция может работать как с двумя переменными, так и с тремя.
 
 
-// let userStr1 = 'black white yellow undefined';
-// let userStr1 = 'black white yellow';
+// let userStr1 = 'black white yellow ';
+// let userStr1 = 'black white yellow undefined 1';
 
-
-// function checkSecondAndThirdStrInSecond(str1, str2, str3 = 'test') {
+// function checkSecondAndThirdStrInSecond(str1, str2, str3) {
 //   return str1.includes(str2) || str1.includes(str3)
 // }
 
-// console.log(checkSecondAndThirdStrInSecond(userStr1, 'test', 'black'));
+// console.log(checkSecondAndThirdStrInSecond(userStr1, 'test'));
 
 // FIXME: 
 // 1) Как проверить содержатся ли 2 подстроки в первой
@@ -164,6 +163,7 @@
 // Зачем он нужен?
 // Когда он срабатывает? (Когда срабатывает присваивание внутри скобок str3 = 'test')
 // Когда нужен параметр по умолчанию, а когда нет?
+// Как выбрать параметр по умолчанию?
 
 
 // console.log(checkSecondAndThirdStrInSecond(userStr1, 'black', 'typo')); // true
@@ -182,6 +182,50 @@
 // console.log(checkSecondAndThirdStrInSecond(userStr1, 'life', 'undefined')); // true
 // console.log(checkSecondAndThirdStrInSecond(userStr1, 'black')); // true
 // console.log(checkSecondAndThirdStrInSecond(userStr1, 'yellow')); // true
+
+
+
+// Параметр по умолчанию
+// 
+
+
+// function includesForArray(array, findWord, startIndex = 0) {
+//   // startIndex = undefined
+//   // if (startIndex === undefined) {
+//   //   startIndex = 0;
+//   // }
+
+//   for (let index = startIndex; index < array.length; index++) {
+//     if (array[index] === findWord) {
+//       return true
+//     }
+//   }
+//   return false
+// }
+
+// console.log(includesForArray(['text', 'test', 'theme'], 'theme'));
+
+
+// function sum(p1, p2, p3 = 0) {
+//   return p1 + p2 + p3
+// }
+
+// function multi(p1, p2, p3 = 1) {
+//   return p1 * p2 * p3
+// }
+
+// // Не путать задачи с rest
+// function sumator(...rest) {
+//   console.log(rest);
+// }
+// sumator(3, 43, 654, 7656, 756, 77, 686, 7876, 8, 67)
+
+
+
+
+
+
+
 
 
 
@@ -572,6 +616,25 @@
 // "ehT testaerg yrotciv si taht hcihw seriuqer on elttab"
 
 
+// const getReverseStr = (str) => {
+//   let result = '';
+//   const newStr = str.split(' ')
+//   for (let i = 0; i < newStr.length; i++) {
+//     result += newStr[i].split('').reverse().join('') + ' ';
+//   }
+//   return result
+// }
+// console.log(getReverseStr('The greatest victory is that which requires no battle'));
+
+
+
+
+
+
+
+
+
+
 // let userStr = 'The greatest victory is that which requires no battle';
 
 // const getReverseStr = (str) => {
@@ -640,7 +703,7 @@
 
 // ================================================================================== //
 
-// 33. Задача
+// FIXME: 33. Задача
 // Написать функцию, на вход которой подаётся строка. Функция возвращает объект, в котором есть 3 свойства:
 
 // Количество заглавных букв;
@@ -648,17 +711,101 @@
 // Количество чисел;
 
 
+// const convertToInfo = (string) => {
+//   const count = {
+//     UpperLetters: 0,
+//     lowerLetters: 0,
+//     numbers: 0,
+//     // sign: 0,
+//   }
 
+//   for (const symbol of string) {
+//     if (!isNaN(symbol)) {
+//       count.numbers++;
+//     } else if (symbol.toLowerCase() === symbol.toUpperCase()) {
+//       // count.sign++;
+//       continue;
+//     } else if (symbol === symbol.toUpperCase()) {
+//       count.UpperLetters++;
+//     } else if (symbol === symbol.toLowerCase()) {
+//       count.lowerLetters++;
+//     }
+//   }
+//   return count
+// }
+
+// const testStr = 'AWs%A2365/';
+// console.log(convertToInfo(testStr));
+
+
+
+
+
+// const getObj = (str) => {
+//   let countNumbers = 0;
+//   let countCapitalLetter = 0;
+//   let countLowercaseLetter = 0;
+
+//   for (let i = 0; i < userStr.length; i++) {
+//     if (userStr[i] === userStr[i].toUpperCase() && !userStr[i].includes(+userStr[i])) {
+//       countCapitalLetter++
+//     } if (userStr[i] === userStr[i].toLowerCase() && !userStr[i].includes(+userStr[i])) {
+//       countLowercaseLetter++
+//     } if (userStr[i].includes(+userStr[i])) {
+//       countNumbers++
+//     }
+//   }
+//   return {
+//     countCapitalLetter,
+//     countLowercaseLetter,
+//     countNumbers
+//   }
+// }
+
+// const userStr = 'AWsA2365';
+// console.log(getObj(userStr));
+
+
+// !Прежний вариант!
+// function getObj(str) {
+//   let countCapitalLetter = 0;
+//   let countLowercaseLetter = 0;
+//   let countNumbers = 0;
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] === str[i].toUpperCase()) {
+//       countCapitalLetter++
+//     }
+//     if (str[i] === str[i].toLowerCase()) {
+//       countLowercaseLetter++
+//     }
+//     if (str[i] === str[i]) {
+//       countNumbers++
+//     }
+//   }
+//   return { countCapitalLetter, countLowercaseLetter, countNumbers }
+// }
+// console.log(getObj('Start'));
 
 // ================================================================================== //
 
-// 34. Задача
+// TODO 34. Задача
 // Написать функцию, на вход которой подаётся строка. Функция возвращает строку, удаляя оттуда все цифры
 
 // Examples:
 // '! !'                 -> '! !'
 // '123456789'           -> ''
 // 'This looks5 grea8t!' -> 'This looks great!'
+
+// let user = 'This looks5 grea8t!';
+// let count = 0;
+// let newStr = '';
+// for (let i = 0; i < user.length; i++) {
+//   if (user[i].includes(+user[i]) !== 'number') {
+//     newStr += user[i]
+//   }
+// }
+// console.log(newStr);
+
 // ================================================================================== //
 
 // 35. Задача
@@ -667,6 +814,27 @@
 // '8 j 8   mBliB8g  imjB8B8  jl  B'               --> '8j8mBliB8gimjB8B8jlB'
 // '8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd'   --> '88Bifk8hB8BB8BBBB888chl8BhBfd'
 // '8aaaaa dddd r     '                            --> '8aaaaaddddr'
+
+
+// let userStr = '8 j 8   mBliB8g  imjB8B8  jl  B';
+// let userStr1 = '8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd';
+// let userStr2 = '8aaaaa dddd r     ';
+
+// const getStringDeleteAllSymbols = (string) => {
+//   const SPACE = ' ';
+//   let stringWithoutSpaces = '';
+//   for (const sybmol of string) {
+//     if (sybmol !== SPACE) {
+//       stringWithoutSpaces += sybmol
+//     }
+//   }
+//   return stringWithoutSpaces
+// }
+
+// console.log(getStringDeleteAllSymbols(userStr));
+// console.log(getStringDeleteAllSymbols(userStr1));
+// console.log(getStringDeleteAllSymbols(userStr2));
+
 // ================================================================================== //
 
 // ★ Задачи повышенной сложности ★
