@@ -441,15 +441,16 @@
 // ★ 21. Задача ★
 // Что выведется в консоль?
 
-// const tester = numbers => Array.isArray(numbers);
+const tester = numbers => Array.isArray(numbers);
+const res = changeBoolToString(tester([3, 7, 4, 1]));
 
-// const res = changeBoolToString(tester([3, 7, 4, 1]));
+function changeBoolToString(a) {
+  return a ? "array" : "Not an Array";
+}
 
-// function changeBoolToString(a) {
-//     return a ? "array" : "Not an Array";
-// }
+console.log(res);
 
-// console.log(res);
+// TODO:Порядок действий?
 // ================================================================================================ //
 
 // ★ 22. Задача ★
