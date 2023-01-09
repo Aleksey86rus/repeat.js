@@ -410,11 +410,8 @@
 
 
 // const checkParamsInArray = (arr, ...params) => {
-//   // console.log(params);
-//   let result = arr.includes(...params)
-//   // console.log(result);
 //   for (const el of arr) {
-//     if (el === +result) {
+//     if (params.includes(el)) {
 //       return false
 //     } else {
 //       return true
@@ -423,10 +420,8 @@
 // }
 
 // console.log(checkParamsInArray([1, 2, 3, 4, 5], 6, 7, 8));
-// console.log(checkParamsInArray([1, 2, 3, 4, 5], 1));
+// console.log(checkParamsInArray([1, 2, 3, 4, 5], 1, 3, 5));
 
-
-// TODO: Как проверить, на наличие нескольких значений в массиве чисел?
 
 // ===================================================================================== //
 // ★ 20. Задача ★
