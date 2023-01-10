@@ -632,34 +632,151 @@
 
 // 23. Задача
 // Написать функцию, которая возвращает наибольшее и наименьшее число из переданного массива. (функция возвращает объект с двумя свойствами)
+
+
+
+
+
+
+
+
+
 // ================================================================================================ //
 
 // 24. Задача
 // Написать функцию, на вход которой подаётся массив чисел, функция возвращает true, если в массиве есть число, которое делится на 17.
+
+
+// const userArray = [5, 3, 8, 17, 9, 4];
+
+// const checkNumberDividedBy17 = (arr) => {
+//   return arr.some((num) => num % 17 === 0
+//   )
+// }
+
+// console.log(checkNumberDividedBy17(userArray));
+
+
 // ================================================================================================ //
 
 // 25. Задача
 // Написать функцию, на вход которой подаётся массив чисел, функция возвращает массив из отрицательных чисел.
+
+
+// const userArray = [1, 2, 3, 4, 5];
+
+// const getArrayNegativeNumbers = (array) => {
+//   return array.map((num) => -num
+//   )
+// }
+
+// console.log(getArrayNegativeNumbers(userArray));
+
+
 // ================================================================================================ //
 
-// 26. Задача
+// FIXME:26. Задача (--------SORT----------)
 // Написать функцию, которая принимает на вход массив чисел, функция мутирует исходный массив - сортируя его в порядке возрастания.
+
 // ================================================================================================ //
 
 // 27. Задача
 // Написать функцию, которая мутирует входный массив, заменяя всё чётные числа на слово 'even'.
+
+
+// const userArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
+// *Map  Выполнет, замену чисел на "even" но не мутирует, исходный массив!
+// const changeAllEvenNumbers = (array) => {
+//   return array.map((num) => {
+//     if (num % 2 === 0) {
+//       return num = 'even'
+//     } else {
+//       return num
+//     }
+//   })
+// }
+
+// console.log(changeAllEvenNumbers(userArray));
+// console.log(userArray);
+
+
+// *For Очень хорошо замутировал исходный массив и так-же заменил все четные числа.
+// const changeAllEvenNumbers = (array) => {
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] % 2 === 0) {
+//       array[i] = 'even'
+//     }
+//   }
+//   return array
+// }
+
+// console.log(changeAllEvenNumbers(userArray));
+
+
 // ================================================================================================ //
 
 // 28. Задача
 // Написать функцию, которая возвращает индекс первого встречного отрицательного числа.
+
+
+// const userArr = [5, 8, -9, 10, -55];
+
+
+// const getIndexFirstNegativeNumber = (array) => {
+//   return array.findIndex((num) => {
+//     if (num < 0) {
+//       return num
+//     }
+//   })
+// }
+
+// console.log(getIndexFirstNegativeNumber(userArr));
+
+
+
+// *Рефакторинг
+// const getIndexFirstNegativeNumber = (array) => {
+//   return array.findIndex((num) => num < 0
+//   )
+// }
+
+// console.log(getIndexFirstNegativeNumber(userArr));
+
+
 // ================================================================================================ //
 
 // 29. Задача
 // Написать функцию, которая мутирует входной массив строк, заменяя все строки на их длину.
+
+
+// const userList = ['one', 'four', 'seven'];
+
+// const changeALLStringByLength = (array) => {
+//   return array.map((string) => {
+//     return string.length
+//   })
+// }
+
+// console.log(changeALLStringByLength(userList));
+
+
+// *Рефакторинг
+// const changeALLStringByLength = (array) => {
+//   return array.map((string) => string.length
+//   )
+// }
+
+// console.log(changeALLStringByLength(userList));
+
+
 // ================================================================================================ //
 
-// 30. Задача
+// FIXME:30. Задача  (--------SORT----------)
 // Написать функцию, которая принимает на вход массив чисел, функция возвращает отсортированный массив чисел в порядке убывания.Но не мутирует исходный массив.
+
+
 // ================================================================================================ //
 
 // 31. Задача
@@ -675,56 +792,96 @@
 
 // Output:
 // {
-//   evenArray: [6, 34, 6, -98, 432, 876, -76, -8, 56, 76, 6]
-//   negArray: [-43, -98, -76, -8, -7]
-//   moreTenArray: [34, 45, 432, 65, 876, 56, 76, 45]
+//   evenArray: [6, 34, 6, -98, 432, 876, -76, -8, 56, 76, 6] // 11
+//   negArray: [-43, -98, -76, -8, -7] // 5
+//   moreTenArray: [34, 45, 432, 65, 876, 56, 76, 45] // 8
 // }
+
+
+// const numberArray = [3, 6, 7, -43, 34, 6, -98, 45, 432, 65, 876, -76, -8, 56, -7, 76, 45, 6];
+
+// const getObjectWithThreeProp = (array) => {
+//   let negArray = [];
+//   let evenArray = [];
+//   let moreTenArray = [];
+
+//   array.filter((num) => {
+//     if (num % 2 === 0) {
+//       negArray.push(num)
+//     } if (num < 0) {
+//       evenArray.push(num)
+//     } if (num > 10) {
+//       moreTenArray.push(num)
+//     }
+//   });
+//   const output = {
+//     'evenArray': evenArray,
+//     'negArray': negArray,
+//     'moreTenArray': moreTenArray
+//   }
+//   return output
+// }
+
+// console.log(getObjectWithThreeProp(numberArray));
+
+
 // ================================================================================================ //
 
 // ★ Условие для следующих задач:
 // Дан массив объектов, выполнить следующие задачи:
 
-// const users = [
-//   {
-//     id: 100,
-//     name: "John",
-//     age: 19,
-//     isMarried: false,
-//     scores: 78
-//   },
-//   {
-//     id: 101,
-//     name: "Peter",
-//     age: 13,
-//     isMarried: false,
-//     scores: 311
-//   },
-//   {
-//     id: 102,
-//     name: "John",
-//     age: 33,
-//     isMarried: false,
-//     scores: 0
-//   },
-//   {
-//     id: 103,
-//     name: "Alex",
-//     age: 14,
-//     isMarried: true,
-//     scores: 121
-//   },
-//   {
-//     id: 104,
-//     name: "Lila",
-//     age: 18,
-//     isMarried: true,
-//     scores: 999
-//   },
-// ]
+const users = [
+  {
+    id: 100,
+    name: "John",
+    age: 19,
+    isMarried: false,
+    scores: 78
+  },
+  {
+    id: 101,
+    name: "Peter",
+    age: 13,
+    isMarried: false,
+    scores: 311
+  },
+  {
+    id: 102,
+    name: "John",
+    age: 33,
+    isMarried: false,
+    scores: 0
+  },
+  {
+    id: 103,
+    name: "Alex",
+    age: 14,
+    isMarried: true,
+    scores: 121
+  },
+  {
+    id: 104,
+    name: "Lila",
+    age: 18,
+    isMarried: true,
+    scores: 999
+  },
+]
+
 // ================================================================================================ //
 
 // 32. Задача
 // Написать функцию, которая получает из массива объектов - массив имён пользователей.
+
+
+// const getArrayUserName = (userArray) => {
+//   return userArray.map((userName) => userName.name
+//   )
+// }
+// console.log(getArrayUserName(users));
+
+// const arrayUserNames = getArrayUserName(users);
+
 // ================================================================================================ //
 
 // 33. Задача
@@ -741,14 +898,65 @@
 //     Семейное положение: <значение>
 //   </span>
 // </div>
+
+// const getArrayStrings = (array) => {
+//   for (let i = 0; i < array.length; i++) {
+//     // return array[i]
+//     // console.log(array[i].name);
+//     console.log();
+//   }
+//   // return `<div>${array[0]}</div>`
+// }
+// console.log(getArrayStrings(users));
+
 // ================================================================================================ //
 
 // 34. Задача
 // Написать функцию, которая принимает на вход массив и имя, функция находит и возвращает объект по имени первого найденного в массиве.
+
+// const getObjectFirstNameInArray = (userList, str) => {
+//   return userList.find((userName) => {
+//     if (userName.name === str) {
+//       return userName
+//     }
+//   })
+// }
+
+// console.log(getObjectFirstNameInArray(users, 'Lila'));
+
+
+// *Рефакторинг
+// const getObjectFirstNameInArray = (userList, str) => {
+//   return userList.find((userName) => userName.name === str && userName)
+// }
+
+// console.log(getObjectFirstNameInArray(users, 'Lila'));
+
+
 // ================================================================================================ //
 
 // 35. Задача
 // Написать функцию, которая принимает на вход массив, функция возвращает массив пользователей, чьё количество очков выше или равно 100.
+
+
+// const getUsersArray = (array) => {
+//   return array.filter((value) => {
+//     if (value.scores >= 100) {
+//       return value.name
+//     }
+//   })
+// }
+
+// console.log(getUsersArray(users));
+
+// *Рефакторинг
+// const getUsersArray = (array) => {
+//   return array.filter((value) => value.scores >= 100 && value.name)
+// }
+
+// console.log(getUsersArray(users));
+
+
 // ================================================================================================ //
 
 // 36. Задача
@@ -756,62 +964,316 @@
 
 // Количество очков задать равным 0;
 // id сделать случайным целым число в диапазоне от 1000 до 2000 не вкл;
+
+
+// const getNewArrayAddedNewUser = (userList, userName, userAge, userIsMarried) => {
+//   userList.push(
+//     {
+//       id: Math.floor(Math.random() * (2000 - 1000) + 1000),
+//       name: userName,
+//       age: userAge,
+//       isMarried: userIsMarried,
+//       scores: 0
+//     }
+//   )
+//   return userList
+// }
+
+// getNewArrayAddedNewUser(users, 'Elena', 25, true);
+
+
 // ================================================================================================ //
 
 // 37. Задача
 // Написать функцию, которая принимает на вход массив, функция возвращает массив, добавляя каждому пользователю новое свойство: isTest: true.
+
+
+// *1
+// const addedEveryUserNewProp = (userList) => {
+//   userList.forEach((newProp) => {
+//     newProp.isTest = true;
+//   })
+//   console.log(userList);
+// }
+
+// console.log(addedEveryUserNewProp(users));
+
+// *2
+// *Рефакторинг
+// const addedEveryUserNewProp = (userList) => {
+//   userList.forEach((newProp) => newProp.isTest = true)
+//   console.log(userList);
+// }
+
+// console.log(addedEveryUserNewProp(users));
+
+
+// *3
+// *for
+// const addedEveryUserNewProp = (userList) => {
+//   for (let i = 0; i < userList.length; i++) {
+//     userList[i].isTest = true
+//   }
+//   console.log(userList);
+// }
+
+// console.log(addedEveryUserNewProp(users));
+
+
 // ================================================================================================ //
 
 // 38. Задача
 // Написать функцию, которая принимает на вход массив и id пользователя и новое семейное положение, функция возвращает массив, в котором меняется свойство isMarried на переданное.
+
+
+// const getArrayChangeProp = (userList, id, isMarried) => {
+//   return userList.filter((v) => {
+//     if (v.id === id) {
+//       return v.isMarried = isMarried
+//     }
+//   })
+// }
+
+// console.log(getArrayChangeProp(users, 100, true));
+
+
+// *Рефакторинг
+// const getArrayChangeProp = (userList, id, isMarried) => {
+//   return userList.filter((value) => value.id === id && (value.isMarried = isMarried))
+// }
+
+// console.log(getArrayChangeProp(users, 100, true));
+
+
 // ================================================================================================ //
 
 // 39. Задача
 // Написать функцию, которая принимает на вход массив и id пользователя, функция возвращает новый массив, удаляя пользователя с переданным id.
+
+
+// const getNewArrayWithDelUser = (userList, userId) => {
+//   return userList.filter((value) => {
+//     if (value.id === userId) {
+//       return delete value.id
+//     }
+//   })
+// }
+
+// console.log(getNewArrayWithDelUser(users, 101));
+
+
+
+// *Рефакторинг
+// const getNewArrayWithDelUser = (userList, userId) => {
+//   return userList.filter((value) => value.id === userId && delete value.id)
+// }
+
+// console.log(getNewArrayWithDelUser(users, 101));
+
+
 // ================================================================================================ //
 
 // 40. Задача
 // Написать функцию, которая принимает на вход массив, функция возвращает массив совершеннолетних пользователей.
+
+// const getArrayAdultUsers = (userList) => {
+//   return userList.filter((value) => {
+//     return value.age >= 14
+//   })
+// }
+
+// console.log(getArrayAdultUsers(users));
+
+
+// *Рефакторинг
+// const getArrayAdultUsers = (userList) => {
+//   return userList.filter((value) => value.age >= 14
+//   )
+// }
+
+// console.log(getArrayAdultUsers(users));
+
+
 // ================================================================================================ //
 
-// 41. Задача
+// FIXME: 41. Задача  ------- SORT --------
 // Написать функцию, которая принимает на вход массив, функция возвращает новый массив объектов, отсортированный в порядке увеличения очков.
+
+
 // ================================================================================================ //
 
-// 42. Задача
+// ???????42. Задача
 // Написать функцию, которая принимает на вход массив, функция возвращает пользователя с самым большим количеством очков.
+
+
+// const getUserWithTheMostPoints = (userList) => {
+//   return userList.map((value) => {
+//     let res = value.scores;
+//     return res
+//     // return value.scores
+//   })
+// }
+
+
+// console.log(getUserWithTheMostPoints(users));
+
+
+
+// const array = [3, 7, 8, 9, 1, 15, 3, 4, 5]
+// console.log(Math.max(...array)); // 15 - spread оператор
+
 // ================================================================================================ //
 
-// 43. Задача
+// FIXME: 43. Задача  ------- SORT --------
 // Написать функцию, которая принимает на вход массив, функция возвращает новый массив объектов, отсортированный в алфавитном порядке имён.
+
+
 // ================================================================================================ //
 
 // 44. Задача
 // Написать функцию, которая принимает на вход массив, функция возвращает сумму всех очков у всех пользователей.
+
+
+// *1
+// const sumScoresAllUsers = (userList) => {
+//   let sumAllScores = 0;
+//   for (let i = 0; i < userList.length; i++) {
+//     sumAllScores += userList[i].scores
+//   }
+//   console.log(sumAllScores);
+// }
+
+// sumScoresAllUsers(users);
+
+
+
+
+// *2
+// const sumScoresAllUsers = (userList) => {
+//   let sumAllScores = 0;
+//   return userList.reduce((prReturnValue, value, i) => {
+//     return prReturnValue + value.scores
+//   }, 0)
+// }
+
+// console.log(sumScoresAllUsers(users));
+
+
+
+
+// *Рефакторинг
+// const sumScoresAllUsers = (userList) => {
+//   let sumAllScores = 0;
+//   return userList.reduce((prReturnValue, value, i) => prReturnValue + value.scores, 0)
+// }
+
+// console.log(sumScoresAllUsers(users));
+
+
 // ================================================================================================ //
 
-// 45. Задача
+// FIXME:45. Задача ------- SORT --------
 // Написать функцию, которая принимает на вход массив, функция возвращает новый массив объектов, отсортированный от самого старшему к самому младшему.
+
+
 // ================================================================================================ //
 
-// 46. Задача
+// FIXME:46. Задача ------- SORT --------
 // Написать функцию, которая принимает на вход массив, функция возвращает новый массив объектов, отсортированный так, что сначала в массиве все женатые / замужние, а все холостяки внизу списка.
+
+
 // ================================================================================================ //
 
 // 47. Задача
 // Написать функцию, которая принимает на вход массив, функция возвращает массив лучших трёх по количеству очков.
+
+
+
+
+
+
+
 // ================================================================================================ //
 
 // 48. Задача
 // Написать функцию, которая принимает на вход массив, функция возвращает массив пользователей, чья длина имени больше 4 символов.
+
+
+// const getArrayLengthNameMoreFourSymb = (userList) => {
+//   return userList.filter((value) => {
+//     return value.name.length > 4
+//   })
+// }
+
+// console.log(getArrayLengthNameMoreFourSymb(users));
+
+
+// *Рефакторинг
+// const getArrayLengthNameMoreFourSymb = (userList) => {
+//   return userList.filter((value) => value.name.length > 4)
+// }
+
+// console.log(getArrayLengthNameMoreFourSymb(users));
+
+
 // ================================================================================================ //
 
-// 49. Задача
+// TODO:49. Задача
 // Написать функцию, которая принимает на вход массив, функция удаляет всех несовершеннолетних пользователей.
+
+
+// const delAllMinorsUsers = (userList, i) => {
+//   return userList.filter((value) => {
+//     if (value.age < 14) {
+//       return
+//     }
+//   })
+// }
+
+// console.log(delAllMinorsUsers(users));
+// console.log(users);
+
+
+
+
+
+
+
+// Удаляем выбранный элемент из массива.
+// const array = [1, 2, 3, 4, 5];
+// let idx = array.indexOf(3);
+// // console.log(idx);
+// const newArr = [];
+// for (let i = 0; i < array.length; i++) {
+//   if (i !== idx) {
+//     newArr.push(array[i])
+//   }
+// }
+// console.log(newArr);
+
+
+
+
+
 // ================================================================================================ //
 
 // 50. Задача
 // Написать функцию, на вход которой подаётся 2 массива пользователей, функция возвращает новый массив, состоящий из всех пользователей двух массивов.
+
+
+// const getArrayAllUsersTwoArray = (userList1, userList2) => {
+//   return userList1.concat(userList2)
+// }
+
+// console.log(getArrayAllUsersTwoArray(users, users));
+
+// * Рефакторинг
+// const getArrayAllUsersTwoArray = (userList1, userList2) => userList1.concat(userList2)
+
+// console.log(getArrayAllUsersTwoArray(users, users));
+
+
+
 
 // ★ Задачи повышенной сложности ★
 // ================================================================================================ //
