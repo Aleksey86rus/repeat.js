@@ -18,3 +18,17 @@ reduce -> value (расчитанное из всего массива) -> сч�
 
 sort -> array (сортированный)
 
+
+
+
+// function sortNumberArray(a, b) {
+//   if (a > b) {
+//     return -1
+//   } if (a < b) {
+//     return 1
+//   } if (a == b) {
+//     return 0
+//   }
+// }
+
+let result = copyArray.sort((a, b) => a - b);
