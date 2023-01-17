@@ -567,6 +567,35 @@
 // console.log(oddNumbers);
 
 
+
+// *4 Рефакторинг с методом Reduce
+// const array = [3, 5, 10, 9, 7];
+// 
+// const countNegativeNumbers = array.reduce((prV, v) => prV + v % 2 !== 0)
+
+// * Почему prV накапливает четные числа? Если у нас в условии указано возвращать нечетные числа! И к тому же, возвращает четное число. 
+// * Reduce - Возвращает значение аккумулятора!?
+//   return v % 2 !== 0 ? prV : v
+// debugger
+// if (v % 2 !== 0) {
+//   return prV;
+// } else {
+//   return v
+// }
+
+
+// *  
+// return v % 2 !== 0 ? v : prV
+// debugger
+// if (v % 2 !== 0) {
+//   return v;
+// } else {
+//   return prV
+// }
+// , 0)
+// console.log(countNegativeNumbers);
+
+
 // ================================================================================================ //
 
 // 21. Задача
@@ -615,6 +644,25 @@
 
 
 
+// *2 Reduce 
+// const array = [2, -5, 8, -7, 1, -4, -4];
+
+// const getSumNegativeNumbers = (arr) => {
+//   return arr.reduce((prV, v) => {
+//     return v < 0 ? prV + v : prV
+//   }, 0)
+// }
+
+// console.log(getSumNegativeNumbers(array));
+
+
+
+// *3 Рефакторинг 
+// const array = [2, -5, 8, -7, 1, -4, -4];
+
+// const getSumNegativeNumbers = arr => arr.reduce((prV, v) => v < 0 ? prV + v : prV, 0)
+
+// console.log(getSumNegativeNumbers(array));
 
 
 // ================================================================================================ //
@@ -629,45 +677,47 @@
 // Найти сумму чисел в массиве
 // const nums = [1, 654, 756, 876, 733]
 
+// *0 Найти сумму чисел в массиве
 // const sum = nums.reduce((prV, v) => prV + v, 0)
 // console.log(sum);
 
-// Найти наибольшее число
+// *1 Найти наибольшее число
 // const startValue = nums[0]
 // const maxValue = nums.reduce((prV, v) => {
 //   console.log(prV, v);
+//   // debugger
 //   return v > prV ? v : prV
 // }, startValue)
 // console.log('____');
 // console.log(maxValue);
+
+// *2 Найти наименьшее число
+// const startValue = nums[0]
+// const minValue = nums.reduce((prV, v) => {
+//   console.log(prV, v);
+//   return v < prV ? v : prV
+// }, startValue)
+// console.log('____');
+// console.log(minValue);
+
+
+
 
 // TODO:
 // 1. Найти наименьшее число
 // 2. Потом вернуться к задачи 
 // 3. Подсказка: startValue -> object
 
-
-
-
-
-
 // EF
 // const userArray = [1, 2, 3, 4, 5];
 
 // const objectTwoProp = (arr) => {
-//   let maxNumber = arr[0];
-//   let minNumber = arr[0];
-//   for (let i = 0; i < arr.length; i++) {
-//     if (arr[i] > maxNumber) {
-//       maxNumber = arr[i]
-//     } 
-//     if (arr[i] < minNumber) {
-//       minNumber = arr[i]
-//     }
-//   }
+//   const startValue = arr[0]
+//   const maxValue = arr.reduce((prV, v) => v > prV ? v : prV, startValue)
+//   const minValue = arr.reduce((prV, v) => v < prV ? v : prV, startValue)
 //   return {
-//     maxNumber,
-//     minNumber
+//     maxValue,
+//     minValue
 //   }
 // }
 
@@ -802,22 +852,11 @@
 
 // const userList = ['one', 'four', 'seven'];
 
-// const changeALLStringByLength = (array) => {
-//   return array.map((string) => {
-//     return string.length
-//   })
-// }
+// // * forEach
+// userList.forEach((v, i, arr) => arr[i] = v.length);
 
-// console.log(changeALLStringByLength(userList));
-
-
-// *Рефакторинг
-// const changeALLStringByLength = (array) => {
-//   return array.map((string) => string.length
-//   )
-// }
-
-// console.log(changeALLStringByLength(userList));
+// console.log(userList);
+// console.log(userList === userList);
 
 
 // ================================================================================================ //
@@ -995,14 +1034,10 @@ const users = [
 // Написать функцию, которая принимает на вход массив и имя, функция находит и возвращает объект по имени первого найденного в массиве.
 
 // const getObjectFirstNameInArray = (userList, name) => {
-//   return userList.find((user) => {
-//     return user.name === name
-//   })
+//   return userList.find((user) => user.name === name)
 // }
 
 // console.log(getObjectFirstNameInArray(users, 'John'));
-
-
 
 
 // ================================================================================================ //
@@ -1012,9 +1047,7 @@ const users = [
 
 
 // const getUsersArray = (array) => {
-//   return array.filter((user) => {
-//     return user.scores >= 500
-//   })
+//   return array.filter((user) => user.scores >= 500)
 // }
 
 // console.log(getUsersArray(users));
@@ -1054,7 +1087,17 @@ const users = [
 // TODO: object[] -> object[] -> map
 
 
-// *1
+// *0 map
+// const addedEveryUserNewProp = (userList) => {
+//   return userList.map((newProp) => newProp.isTest = true)
+// }
+
+// addedEveryUserNewProp(users);
+// console.log(users);
+
+
+
+// *1 forEach
 // const addedEveryUserNewProp = (userList) => {
 //   userList.forEach((newProp) => {
 //     newProp.isTest = true;
@@ -1062,7 +1105,7 @@ const users = [
 //   console.log(userList);
 // }
 
-// console.log(addedEveryUserNewProp(users));
+// addedEveryUserNewProp(users);
 
 // *2
 // *Рефакторинг
@@ -1104,6 +1147,17 @@ const users = [
 // console.log(getArrayChangeProp(users, 100, true));
 
 
+// * map
+// const getArrayChangeProp = (userList, id, isMarried) => {
+//   return userList.map((v) => v.id === id && (v.isMarried = isMarried))
+// }
+
+// getArrayChangeProp(users, 100, true);
+// console.log(users);
+
+
+
+
 // *Рефакторинг
 // const getArrayChangeProp = (userList, id, isMarried) => {
 //   return userList.filter((value) => value.id === id && (value.isMarried = isMarried))
@@ -1129,6 +1183,14 @@ const users = [
 
 // console.log(getNewArrayWithDelUser(users, 101));
 
+
+// * map
+// const getNewArrayWithDelUser = (userList, userId) => {
+//   return userList.map((value) => value.id === userId && delete value.id)
+// }
+
+// getNewArrayWithDelUser(users, 101);
+// console.log(users);
 
 
 // *Рефакторинг
@@ -1179,6 +1241,75 @@ const users = [
 
 // let maxNumber = 0;
 // const getUserWithTheMostPoints = (userList) => {
+//   return userList.map((v) => {
+//     // console.log(v.scores);
+//     // return v.scores // *? Почему нельзя применить к массиву метод sort
+//   })
+
+// }
+
+// console.log(getUserWithTheMostPoints(users));
+
+
+const userList = [
+  {
+    id: 100,
+    name: "John",
+    age: 19,
+    isMarried: false,
+    scores: 78
+  },
+  {
+    id: 101,
+    name: "Peter",
+    age: 13,
+    isMarried: false,
+    scores: 311
+  },
+  {
+    id: 102,
+    name: "John",
+    age: 33,
+    isMarried: false,
+    scores: 99990
+  },
+  {
+    id: 103,
+    name: "Alex",
+    age: 14,
+    isMarried: true,
+    scores: 121
+  },
+  {
+    id: 104,
+    name: "Lila",
+    age: 18,
+    isMarried: true,
+    scores: 999
+  },
+]
+
+// 1 сортировка -> взять последний элемент -> n^2
+// reduce -> n
+
+const res = userList.reduce((userHighScore, user) => {
+  return userHighScore < user.scores ? user.scores : userHighScore
+}, 0)
+console.log(res);
+
+
+const res2 = userList.reduce((userHighScore, user) => {
+  return userHighScore.scores < user.scores ? user : userHighScore
+}, userList[0])
+console.log(res2);
+
+
+
+
+
+
+// let maxNumber = 0;
+// const getUserWithTheMostPoints = (userList) => {
 
 //   for (let i = 0; i < userList.length; i++) {
 //     if (userList[i].scores > maxNumber) {
@@ -1201,6 +1332,13 @@ const users = [
 
 // FIXME: 43. Задача  ------- SORT --------
 // Написать функцию, которая принимает на вход массив, функция возвращает новый массив объектов, отсортированный в алфавитном порядке имён.
+
+
+// const getNewArrayObjects = (array) => {
+
+// }
+
+// console.log(getNewArrayObjects(users));
 
 
 // ================================================================================================ //
@@ -1297,20 +1435,13 @@ const users = [
 // Написать функцию, которая принимает на вход массив, функция удаляет всех несовершеннолетних пользователей.
 
 // FIXME:
-// const delAllMinorsUsers = (userList, i) => {
+// const delAllMinorsUsers = (userList) => {
 //   return userList.filter((value) => {
 //     if (value.age < 14) {
-//       return
+//       return value
 //     }
 //   })
 // }
-
-// console.log(delAllMinorsUsers(users));
-// console.log(users);
-
-
-
-
 
 
 
@@ -1355,13 +1486,34 @@ const users = [
 
 // ★ 51. Задача ★
 // Написать функцию, которая принимает на вход массив, функция возвращает сумму всех очков у всех пользователей, которые женаты.
+
+
+// const getSumAllPoints = (array) => {
+//   return array.reduce((prV, value) => {
+//     return value.isMarried === true ? prV + value.scores : prV
+//   }, 0)
+// }
+
+// console.log(getSumAllPoints(users));
+
 // ================================================================================================ //
 
 // ★ 52. Задача ★
 // Написать функцию, которая принимает на вход массив, функция возвращает сумму всех очков у всех совершеннолетних пользователей.
+
+
+// const getSumAllPointsAllAdultUsers = (array) => {
+//   return array.reduce((prV, value) => {
+//     return value.age > 14 ? prV + value.scores : prV
+//   }, 0)
+// }
+
+// console.log(getSumAllPointsAllAdultUsers(users));
+
+
 // ================================================================================================ //
 
-// ★ 53. Задача ★
+// ★ FIXME:53. Задача ★
 // Написать функцию, которая возвращает первое встречное слово, в котором хотя бы 2 буквы заглавные
 // ================================================================================================ //
 
@@ -1381,3 +1533,4 @@ const users = [
 // some;
 // every;
 // reduce;
+
