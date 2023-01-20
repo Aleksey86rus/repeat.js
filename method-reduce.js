@@ -1,11 +1,12 @@
-// 2. Задача
+// 22. Задача
+// FIXME:
 // Написать функцию, которая находит индекс первого имени в массиве, длина которого больше 5.
 
 //                0     1     2      3       4     5    6     7
 // const userList = [1, 'denis', 9, 'Nikolay', 25, 'Egor', 99, 'Leo'];
 
 // const getFirstIndexInArray = (array) => {
-//   return array.reduce((prV, v, i) => v.length < 4 ? i : prV, 100)
+//
 // }
 
 // console.log(getFirstIndexInArray(userList));
@@ -71,6 +72,24 @@
 //   },
 // ]
 
+
+// TODO: Решить с помощью 1 reduce
+
+  // const maxValue = array.reduce((prV, v) => v.scores > prV ? v.scores : prV, 0)
+  // const minValue = array.reduce((prV, v) => v.scores < prV ? v.scores : prV, startValue)
+  // return {
+  //   maxValue,
+  //   minValue
+  // }
+// }
+
+// console.log(objectTwoProp(users));
+
+
+
+
+
+
 // const objectTwoProp = (array) => {
 //   const startValue = array[0].scores
 //   // console.log(startValue.scores);
@@ -130,7 +149,7 @@
 // ]
 
 // const gerAllSumAllUsers = (array) => {
-//   return array.reduce((prV, v) => v.scores + prV, 0)
+//   return array.reduce((scores, user) => user.scores + scores, 0)
 // }
 
 // console.log(gerAllSumAllUsers(users));
@@ -181,7 +200,7 @@
 
 
 // const getAllSumWithMarried = (array) => {
-//   return array.reduce((prV, v) => v.isMarried === true ? v.scores + prV : prV, 0)
+//   return array.reduce((prV, v) => v.isMarried ? v.scores + prV : prV, 0)
 // }
 
 // console.log(getAllSumWithMarried(users));
@@ -230,7 +249,7 @@
 
 
 // const getAllPointsAllAdultUsers = (array) => {
-//   return array.reduce((prV, v) => v.age > 14 ? v.scores + prV : prV, 0)
+//   return array.reduce((prV, v) => v.age > 18 ? v.scores + prV : prV, 0)
 // }
 
 // console.log(getAllPointsAllAdultUsers(users));
