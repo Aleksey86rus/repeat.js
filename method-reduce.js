@@ -30,7 +30,7 @@
 
 // ========================================================================= //
 // 23. Задача
-// Написать функцию, которая возвращает наибольшее и наименьшее число из переданного массива. (функция возвращает объект с двумя свойствами)
+// Написать функцию, которая возвращает наибольшее и наименьшее и наибольшее число из переданного массива. (функция возвращает объект с двумя свойствами)
 // ========================================================================= //
 // Дан массив объектов, выполнить следующие задачи:
 
@@ -73,18 +73,57 @@
 // ]
 
 
+// Написать функцию, которая возвращает наибольшее и наименьшее и 
+// наибольшее число из переданного массива.
+
+const users = [8, 1, 3, 4, 5, 6, 10]
+// *1 Вариант
+const objectTwoProp = (array) => {
+  const startValue = array[0]
+  const maxValue = array.reduce((prV, v) => v > prV ? v : prV, startValue)
+  const minValue = array.reduce((prV, v) => v < prV ? v : prV, startValue)
+  return {
+    maxValue,
+    minValue
+  }
+}
+console.log(objectTwoProp(users));
+
+
+
+
 // TODO: Решить с помощью 1 reduce
 
-  // const maxValue = array.reduce((prV, v) => v.scores > prV ? v.scores : prV, 0)
-  // const minValue = array.reduce((prV, v) => v.scores < prV ? v.scores : prV, startValue)
-  // return {
-  //   maxValue,
-  //   minValue
-  // }
-// }
+// ? 2 Вариант
+const users2 = [8, 1, 3, 4, 5, 6, 10]
 
-// console.log(objectTwoProp(users));
+const objectTwoProp2 = (array) => {
+}
 
+console.log(objectTwoProp2(users2));
+
+
+
+
+
+
+
+
+// * Превращаем массив в объект
+// const users = [
+//   { name: 'John', age: 32, salary: 1500 },
+//   { name: 'Mike', age: 25, salary: 1200 },
+//   { name: 'Pieter', age: 27, salary: 1400 },
+//   { name: 'Jim', age: 22, salary: 1800 }
+// ]
+
+// const usersObj = users.reduce((acc, user, index) => {
+//   acc[index] = user
+//   return acc;
+//   // Начальное значение {}
+// }, {});
+
+// console.log('New Object', usersObj);
 
 
 
@@ -92,8 +131,6 @@
 
 // const objectTwoProp = (array) => {
 //   const startValue = array[0].scores
-//   // console.log(startValue.scores);
-//   // debugger
 //   const maxValue = array.reduce((prV, v) => v.scores > prV ? v.scores : prV, 0)
 //   const minValue = array.reduce((prV, v) => v.scores < prV ? v.scores : prV, startValue)
 //   return {

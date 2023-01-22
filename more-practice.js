@@ -66,7 +66,8 @@ const object = {
 // console.log(object);
 
 
-// =========== HOF ======================= //
+// * =========== HOF ======================= *//
+
 // const res = users.forEach((v, i, arr) => {
 //   // console.log(v.id);
 //   console.log(v, i);
@@ -119,7 +120,8 @@ const object = {
 
 // })
 
-
+// some ( () => {})
+// every ( () => {})
 
 
 
