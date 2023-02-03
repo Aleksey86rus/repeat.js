@@ -362,6 +362,26 @@
 // FIXME: 23. Задача
 // Написать функцию, которая возвращает наибольшее и наименьшее число из переданного массива. (функция возвращает объект с двумя свойствами)
 
+// const getMinMaxValues = (array) => {
+//   const values = {
+//     min: array[0],
+//     max: array[0],
+//   }
+
+//   return array.reduce((returnValue, value) => {
+//     if (returnValue.min > value) {
+//       returnValue.min = value
+//     } else {
+//       returnValue.max = value
+//     }
+
+//     return returnValue
+//   }, values)
+// }
+
+// console.log(getMinMaxValues([3, 15, 9, 20]));
+
+
 
 
 
@@ -422,10 +442,11 @@
 
 // const changeAllEvenNumbers = (array) => {
 //   array.forEach((el, i, arr) => el % 2 === 0 && (arr[i] = 'even'))
-//   // console.log(array);
 // }
+
 // console.log(userNumberList);
 // changeAllEvenNumbers(userNumberList);
+// console.log(userNumberList);
 
 
 // !  *** for = ЗАМУТИРОВАЛ ***
@@ -696,12 +717,22 @@ const users = [
 // Написать функцию, которая принимает на вход массив и id пользователя, функция возвращает новый массив, удаляя пользователя с переданным id.
 
 
-// const getNewArrayDeletOneUser = (userList, userId) => {
-//   return userList.filter((el, i, arr) => el.id === userId && delete arr[i])
+// const getNewArrayDeletOneUser = (userList, id) => {
+//   return userList.filter((user) => user.id !== id)
 // }
 
 // console.log(getNewArrayDeletOneUser(users, 100));
 // console.log(users);
+
+// map - Read
+// filter - Delete
+// map + ... - UPDATE
+// ... - Create
+
+//
+
+
+// isNaN() - является не числом
 
 //! Элемент полность не удалился из массива. Образовалось empty
 
@@ -742,8 +773,8 @@ const users = [
 // const getUserMaxScores = (array) => {
 //   return array.reduce((prV, v) => {
 //     v.scores > prV ? v.scores : prV
-//     return array.find((el) => el.scores === v.scores)
-//   }, 0)
+//     // return array.find((el) => el.scores === v.scores)
+//   }, user[0]) // TODO:
 // }
 
 // console.log(getUserMaxScores(users));
@@ -754,34 +785,103 @@ const users = [
 
 // 43. Задача
 // Написать функцию, которая принимает на вход массив, функция возвращает новый массив объектов, отсортированный в алфавитном порядке имён.
+
+// const getArraySortName = (array) => {
+//   const newArray = [...array].sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1)
+//   return newArray
+// }
+
+// console.log(getArraySortName(users));
+
+
 // ********************************************************************************* //
 
 // 44. Задача
 // Написать функцию, которая принимает на вход массив, функция возвращает сумму всех очков у всех пользователей.
+
+// const getSumAllPointAllUsers = (array) => {
+//   return array.reduce((prV, el) => {
+//     return el.scores + prV
+//   }, 0)
+// }
+
+// console.log(getSumAllPointAllUsers(users));
+
 // ********************************************************************************* //
 
 // 45. Задача
 // Написать функцию, которая принимает на вход массив, функция возвращает новый массив объектов, отсортированный от самого старшему к самому младшему.
+
+
+// const getNewarraySortfromSeniorToJunior = (array) => {
+//   const newArray = [...array].sort((a, b) => a.age > b.age ? 1 : -1);
+//   return newArray
+// }
+
+// console.log(getNewarraySortfromSeniorToJunior(users));
+
 // ********************************************************************************* //
 
 // 46. Задача
 // Написать функцию, которая принимает на вход массив, функция возвращает новый массив объектов, отсортированный так, что сначала в массиве все женатые/замужние, а все холостяки внизу списка.
+
+
+// const getNewArraySortIsMarried = (array) => {
+//   const newArray = [...array].sort((a, b) => a.isMarried < b.isMarried ? 1 : -1)
+//   return newArray
+// }
+
+// console.log(getNewArraySortIsMarried(users));
+
+
 // ********************************************************************************* //
 
-// 47. Задача
+// FIXME:47. Задача
 // Написать функцию, которая принимает на вход массив, функция возвращает массив лучших трёх по количеству очков.
+
+// [...sort]
+// slice
+
 // ********************************************************************************* //
 
 // 48. Задача
 // Написать функцию, которая принимает на вход массив, функция возвращает массив пользователей, чья длина имени больше 4 символов.
+
+
+// const getUsersLengthNameMoreFour = (array) => {
+//   return array.filter((el) => el.name.length > 4)
+// }
+
+// console.log(getUsersLengthNameMoreFour(users));
+
 // ********************************************************************************* //
 
-// 49. Задача
+// TODO:49. Задача
 // Написать функцию, которая принимает на вход массив, функция удаляет всех несовершеннолетних пользователей.
+
+// const deleteUsersAgeLess14 = (array) => {
+//   return array.filter((el) => delete el.age < 18)
+// }
+
+// console.log(deleteUsersAgeLess14(users));
+// console.log(users);
+
+
 // ********************************************************************************* //
 
 // 50. Задача
 // Написать функцию, на вход которой подаётся 2 массива пользователей, функция возвращает новый массив, состоящий из всех пользователей двух массивов.
+
+
+// const userArrayOne = [1, 2, 3, 4, 5];
+// const userArrayTwo = [6, 7, 8, 9, 10];
+
+// const getNewArrayAllUsersTwoArray = (arrayOne, arrayTwo) => {
+//   return arrayOne.concat(arrayTwo)
+// }
+
+// console.log(getNewArrayAllUsersTwoArray(userArrayOne, userArrayTwo));
+
 // ********************************************************************************* //
 
 // ★ Задачи повышенной сложности ★
@@ -813,3 +913,21 @@ const users = [
 // some;
 // every;
 // reduce;
+
+
+// calculator('3 + 7') // '10'
+// calculator('3 * 7') // '21'
+// calculator('9 / 3') // '3'
+// calculator('10 - 3') // '7'
+
+// calculator('11 - 3') // 'Error'
+// calculator('V - 3') // 'Error'
+// calculator('V / II') // 'II'
+// calculator('5 / 2') // '2'
+
+// calculator('V - III') // 'II'
+
+
+// Бросить ошибку
+// throw new Error("В чём ошибка?") // Бросается ошибка и завершается работа прогроаммы на этой строчке
+

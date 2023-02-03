@@ -1,127 +1,54 @@
 
-const testList = [1, 4, 3]
 
-// break - не работает в forEach
+// Написать условие, при котором в консоль выводится ок
+// Если мы попали в диапазон от 1 до 10 вкл
 
-testList.forEach
-testList.find
 
-// 1+
+// if (num >= 1 && num <= 10) {
+//   console.log('ok');
+// } else {
+//   console.log('not ok');
+// }
 
 
+let num1 = 3
+let num2 = 711
 
-testList.filter((value) => {
-  return value < 100
-})
+// Написать программу, которая проверяет попалают ли 2 числа в диапазон от 1 до 10 вкл
+// const isValidNum1 = num1 >= 1 && num1 <= 10
+// const isValidNum2 = num2 >= 1 && num2 <= 10
 
-testList.find((value) => {
-  return value < 100
-})
+// if (isValidNum1 && isValidNum2) {
+//   console.log('ok');
+// } else {
+//   console.log('not ok');
+// }
 
-// 2+
 
-const res = testList.reduce((prV) => {
-  return prV + 1
-}, 0)
+// Написать функцию которая провреят 2 числа, попали ли они в диапазон от 1 до 10 вкл
 
-//
-console.log(res); // 5
 
+const checkRangeFrom1To10 = (num) => num >= 1 && num <= 10
+const isRange = checkRangeFrom1To10(2)
 
+const isValidTwoValues = (num1, num2) => {
+  return checkRangeFrom1To10(num1)
+    && checkRangeFrom1To10(num2)
+}
 
-// 2 итерация -> val
-const res33 = testList.reduce((acc, el, i) => {
-  return acc + el + i
-}, 100)
+// console.log(isValidTwoValues(1, 7));
 
-console.log(res33); // 111
 
-// 1 + 0 + 100 = 101
-// 101 + 4 + 1 = 106
 
+// const checkRangeFrom1To10 = (num) => num >= 1 && num <= 10
 
-rray = [10, 5, 8, 7];
-const countOddeNumbers = array.reduce((prV, v) => {
-  // return v % 2 !== 0 ? prV + v : prV
+// const isValidTwoValues = (...numbers) => {
+//   return numbers.every((num) => checkRangeFrom1To10(num))
+// }
 
-  // if (v % 2 !== 0) {
-  //   return prV + v
-  // } else {
-  //   return prV
-  // }
-}, 0)
+// console.log(isValidTwoValues(1, 7, 6, 17, 8, 9, 5));
 
-// prV = 0; v = 10
-// return prV
 
-// prV = 0
-// v = 5
-//return prV + v = 5
-
-
-// prV = 5
-// v = 8
-// return prV = 5
-
-
-
-// prV = 0; v = 10
-
-
-
-
-
-const countNegativeNumbers = array.reduce((prV, v) => {
-  return prV + v % 2 !== 0
-})
-
-// 1 iter
-// prV = 0
-// v = 3
-// prV + v % 2 !== 0
-//return true
-
-// 2 iter
-// prV = true
-
-
-// Написать 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// some -> v1 || v2 || v3 ... || vN
+// every -> v1 && v2 && v3 ... && vN
 

@@ -829,14 +829,14 @@
 // console.log(maxElementInArray);
 
 
-const array = [15, 32, 17];
+// const array = [15, 32, 17];
 
-for (let i = 0; i <= array.length; i++) {
-  for (let k = array.length; k <= 5; k++) {
-    console.log(array[i]);
-  }
+// for (let i = 0; i <= array.length; i++) {
+//   for (let k = array.length; k <= 5; k++) {
+//     console.log(array[i]);
+//   }
 
-}
+// }
 
 
 // =========================================================================== //

@@ -1,20 +1,20 @@
 // Задачи по теме 10. Object
 // Дан объект user, выполнить задачи 1 - 6:
 
-const user = {
-  name: "Peter",
-  age: 33,
-  job: "Developer",
+// const user = {
+//   name: "Peter",
+//   age: 33,
+//   job: "Developer",
 
-  "my address": {
-    city: "Moscow",
-    country: "Russia",
-    abroad: ["Vienna", "Paris", "London", "Miami", "LA"]
-  },
-  item: ["bag", "book", "pencil"],
-  more: null,
-  key: "Aha-ha-ha-ha"
-};
+//   "my address": {
+//     city: "Moscow",
+//     country: "Russia",
+//     abroad: ["Vienna", "Paris", "London", "Miami", "LA"]
+//   },
+//   item: ["bag", "book", "pencil"],
+//   more: null,
+//   key: "Aha-ha-ha-ha"
+// };
 
 // =================================================================================== //
 
@@ -111,9 +111,16 @@ const user = {
 //   name: "Lucas",
 //   age: 29,
 // };
-// user.prop = 'Manager'
+// user[prop] = 'Manager'
+// // user.prop = 'Manager'
 
 // console.log(user);
+
+// const user = {
+//   name: "Lucas",
+//   age: 29,
+//   job: 'Mager'
+// };
 
 
 // =================================================================================== //
@@ -121,20 +128,38 @@ const user = {
 // 11. Задача
 // Дан объект user, выполнить удаление свойств, которые содержут слово delete в ключе.
 
-// Циклом пользоваться не нужно, просто удалить.
+
 // const user = {
 //   name: "Lucas",
 //   age: 29,
 //   "delete me": 'text',
 //   delete: 105,
-//   'deleteProp': false
+//   'deleteProp': false,
+//   'ВdeleteProp2': false,
+//   'Вfdsdelete': false,
+//   key:
 // };
 
-// delete user['delete me'];
-// delete user.delete;
-// delete user.deleteProp;
+// // Циклом пользоваться не нужно, просто удалить.
+// // delete user['delete me'];
+// // delete user.delete;
+// // delete user.deleteProp;
+
 
 // console.log(user);
+
+// for (const key in user) {
+//   console.log(key);
+//   key.includes('delete') && delete user[key]
+//   key.includes('delete') && delete user.key
+
+
+//   // console.log(key.includes('delete'));
+// }
+
+
+// console.log(user);
+
 
 // =================================================================================== //
 
