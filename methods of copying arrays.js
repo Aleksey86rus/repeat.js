@@ -48,3 +48,29 @@
 
 // newArray.length = 3; // Укоротили исходный массив
 // console.log(array); // Получим - [1, 2, 3]
+
+// * 5
+// const array = [1, 2, 3, 4, 5];
+// const cloneArray = Array.from(array);
+
+// console.log(cloneArray);
+// console.log(cloneArray === array);// => false
+
+
+// * 6
+// const array = [1, 2, 3, 4, 5];
+// const cloneArray = [...array];
+// console.log(cloneArray);
+// console.log(cloneArray === array);// => false
+
+// * 7
+// копирование массиво в массиве
+// let sheeps = [['1', '2'], ['3', '4'], ['5', '6']]
+// let cloneSheeps = sheeps.map(function (item) {
+//   return [...item]
+// })
+
+// cloneSheeps[1].push('100')
+
+// console.log(sheeps)
+// console.log(cloneSheeps)

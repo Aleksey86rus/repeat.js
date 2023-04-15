@@ -11,7 +11,7 @@
 //   'I': 1,
 //   'II': 2,
 //   'III': 3,
-//   'VI': 4,
+//   'IV': 4,
 //   'V': 5,
 //   'VI': 6,
 //   'VII': 7,
@@ -20,72 +20,15 @@
 //   'X': 10,
 // }
 
-// const calculator = (str, mathOperators, fnMultipl) => {
-//   let newStr = '';
-//   for (const el of str) {
-//     if (el !== ' ') {
-//       newStr += el
-//     }
+// let count = 0;
+// for (const key in roman) {
+//   // debugger
+//   if (typeof key === 'string') {
+//     count = key +
 //   }
-//   let indexMultipl = newStr.indexOf(mathOperators);
-//   let numArab1 = newStr.slice(0, indexMultipl);
-//   let numArab2 = newStr.slice(indexMultipl + 1);
-//   let numRoman1 = newStr.slice(0, indexMultipl);
-//   let numRoman2 = newStr.slice(indexMultipl + 1);
-
-//   for (const key in roman) {
-//     if (numRoman1 === key) {
-//       numRoman1 = roman[key];
-//     }
-//     if (numRoman2 === key) {
-//       numRoman2 = roman[key];
-//     }
-//     if (numRoman1 >= 1 && numRoman1 <= 10
-//       && numRoman2 >= 1 && numRoman2 <= 10) {
-//       return fnMultipl(+numRoman1, +numRoman2)
-//     }
-//   }
-
-
-//   //? if (isNaN(numRoman1) || isNaN(numRoman2)) {
-//   //   console.log(isNaN(numRoman1));
-//   //   throw new Error('Введеный символ не является числом!')
-//   // }
-
-
-//   if (numArab1 >= 1 && numArab1 <= 10
-//     && numArab2 >= 1 && numArab2 <= 10) {
-//     return fnMultipl(+numArab1, +numArab2)
-//   } else {
-//     throw new Error('Неверно указан диапазон чисел!')
-//   }
+//   // console.log(key);
 // }
-
-// const multipl = (el1, el2) => {
-//   return el1 * el2;
-// }
-
-// const division = (el1, el2) => {
-//   return Math.round(el1 / el2);
-// }
-
-// const addition = (el1, el2) => {
-//   return el1 + el2;
-// }
-
-// const subtraction = (el1, el2) => {
-//   return el1 - el2;
-// }
-
-
-// console.log(calculator('2 * 2', operators.multipl, multipl));
-// console.log(calculator('II * III', operators.multipl, multipl));
-// // console.log(calculator('VII * 3', operators.multipl, multipl));
-// // console.log(calculator('3 * II', operators.multipl, multipl));
-// // console.log(calculator('X / 2', operators.division, division));
-// console.log(calculator('8 + 9', operators.addition, addition));
-// console.log(calculator('7 - 9', operators.subtraction, subtraction));
-
+// console.log(count);
 // ******************************************************************* //
 
 
@@ -98,8 +41,29 @@ const calculator = (str) => {
   }
 
 
-  let indexSymbol;
 
+
+  const checkIsNumber = (num1, num2) => !isNaN(num1) && !isNaN(num2)
+  const checkIsNaN = (num1, num2) => isNaN(num1) || isNaN(num2)
+
+  const roman = {
+    'I': 1,
+    'II': 2,
+    'III': 3,
+    'IV': 4,
+    'V': 5,
+    'VI': 6,
+    'VII': 7,
+    'VIII': 8,
+    'IX': 9,
+    'X': 10,
+  }
+  const checkRomanNumber = (num1, num2) => {
+    const romanList = Object.keys(roman)
+    return romanList.includes(num1) && romanList.includes(num2)
+  }
+
+  let indexSymbol;
   if (newStr.includes('+')) {
     indexSymbol = newStr.indexOf('+');
   } else if (newStr.includes('-')) {
@@ -109,62 +73,141 @@ const calculator = (str) => {
   } else if (newStr.includes('/')) {
     indexSymbol = newStr.indexOf('/');
   }
-  const SIGN = newStr[indexSymbol]
-
-  console.log(indexSymbol, SIGN);
+  const mathSymbol = newStr[indexSymbol]
 
 
-  // console.log(indexSymbol);
-  const numBefore = +newStr.slice(0, indexSymbol);
-  // console.log(+numBefore);
-  const numAfter = +newStr.slice(indexSymbol + 1);
-  // console.log(+numAfter);
+  let numBefore = newStr.slice(0, indexSymbol);
+  let numAfter = newStr.slice(indexSymbol + 1);
 
-  let res = {
-    numBefore,
-    numAfter,
-    SIGN
+  console.log(numBefore, numAfter);
+
+  if (checkRomanNumber(numBefore, numAfter)) {
+    for (const key in roman) {
+      if (key === numBefore) {
+        numBefore = roman[key];
+      }
+      if (key === numAfter) {
+        numAfter = roman[key];
+      }
+    }
+  } else {
+    numBefore = +numBefore
+    numAfter = +numAfter
   }
-  // console.log(res);
 
-  // const checkRange = (num1, num2) =>
-  //   num1 >= 1 && num1 <= 10 &&
-  //   num2 >= 1 && num2 <= 10
+  console.log(numBefore, numAfter);
 
-  //   const isArabicOrRoman = (num1, num2) => {
-  //       if(!isNaN(num1) && !isNaN(num2)) {
-  // return 
+
+  // const numRomanBefore = newStr.slice(0, indexSymbol)
+  // const numRomanAfter = newStr.slice(indexSymbol + 1)
+
+  // console.log(numRomanBefore);
+  // console.log(numRomanAfter);
+
+
+
+
+  if (numBefore >= 1 && numBefore <= 10 && numAfter >= 1 && numAfter <= 10) {
+    if (mathSymbol === '*') {
+      return numBefore * numAfter
+    }
+    if (mathSymbol === '/') {
+      return Math.round(numBefore / numAfter)
+    }
+    if (mathSymbol === '+') {
+      return numBefore + numAfter
+    }
+    if (mathSymbol === '-') {
+      return numBefore - numAfter
+    }
+  } else {
+    throw new Error()
+  }
+
+
+  // let numRoBefore;
+  // let numRoAfter;
+  // for (const key in roman) {
+  //   if (key === numRomanBefore) {
+  //     numRoBefore = roman[key];
   //   }
-  //   }
-
-
-  // return !isNaN(num1)
-
-  // console.log(isArabicOrRoman(numBefore, numAfter));
-  // isArabicOrRoman(numBefore, numAfter)
-
-
-  // const addition = (num1, num2) => {
-  //   if (checkRange(numBefore, numBefore)) {
-  //     return +num1 + +num2
-  //   } else {
-  //     throw new Error
+  //   if (key === numRomanAfter) {
+  //     numRoAfter = roman[key];
   //   }
   // }
-  // console.log(addition(numBefore, numAfter));
+
+  // if (numRoBefore >= 1 && numRoBefore <= 10 && numRoAfter >= 1 && numRoAfter <= 10) {
+  //   if (checkIsNaN(numRomanBefore, numRomanAfter)) {
+  //     if (mathSymbol === '*') {
+  //       return numRoBefore * numRoAfter
+  //     }
+  //     if (mathSymbol === '/') {
+  //       return Math.round(numRoBefore / numRoAfter)
+  //     }
+  //     if (mathSymbol === '+') {
+  //       return numRoBefore + numRoAfter
+  //     }
+  //     if (mathSymbol === '-') {
+  //       return numRoBefore - numRoAfter
+  //     } else if (checkIsNaN(numRomanBefore, numRomanAfter)) {
+  //       throw new Error('Введено число')
+  //     } else {
+  //       throw new Error('Превышен диапазон допустимого числаaaa')
+  //     }
+  //   }
+  // }
 
 }
 
-calculator('10 + 3')
-// calculator('4 * 5');
-// calculator('9 - 4');
-// calculator('10 / 5');
+
+// arabic
+console.log(calculator('10 * 10'));
+// console.log(calculator('VII + V'));
+// console.log(calculator('1 - 5'));
+// console.log(calculator('9 * 4'));
+// console.log(calculator('10 / 8'));
 
 
-// console.log(calculator('7 + 3'));
-// console.log(calculator('4 * 5'));
-// console.log(calculator('9 - 4'));
-// console.log(calculator('10 / 5'));
+// roman
+// console.log(calculator('VII * X'));
+
+
+
+  // const numRomanBefore = newStr.slice(0, indexSymbol)
+  // // console.log(numRomanBefore);
+  // const numRomanAfter = newStr.slice(indexSymbol + 1)
+  // // console.log(numRomanAfter);
+
+  // // let resRomanNumbers = {
+  // //   numRomanBefore,
+  // //   numRomanAfter,
+  // //   mathSymbol
+  // // }
+  // // console.log(resRomanNumbers);
+
+
+  // let numRoman1;
+  // let numRoman2;
+  // for (const key in roman) {
+  //   if (key === numRomanBefore) {
+  //     numRoman1 = roman[key];
+  //     // console.log(numRoman1);
+  //   }
+  //   if (key === numRomanAfter) {
+  //     numRoman2 = roman[key];
+  //     // console.log(numRoman2);
+  //   }
+  // }
+
+
+// roman
+// console.log(calculator('V + V'));
+
+
+
+
+
+
 
 
 // *******************************************************
